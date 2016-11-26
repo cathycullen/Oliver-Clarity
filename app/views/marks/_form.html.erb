@@ -1,0 +1,105 @@
+<%= form_for(mark) do |f| %>
+  <% if mark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mark.errors.count, "error") %> prohibited this mark from being saved:</h2>
+
+      <ul>
+      <% mark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <fieldset>
+    <legend>Contact Information</legend>
+      <div class="field">
+          <%= f.label :contact_name %>
+          <br>
+          <%= f.text_field :contact, :placeholder => "Insert contact name" %>
+          <br>
+          <%= f.label :contact_email %>
+          <br>
+          <%= f.text_field :email, :placeholder => "Insert contact email" %>
+      </div>
+  </fieldset>
+  <br>
+  <br>
+  <fieldset>
+    <legend>Owner Information</legend>
+      <div class="field">
+          <%= f.label :owner_name %>
+          <br>
+          <%= f.text_field :owner, :placeholder => "Insert mark owner's name" %>
+          <br>
+          <%= f.label :owner_type %>
+          <br>
+          <%= f.text_field :type, :placeholder => "E.g., Individual, corporation, LLC, etc." %>
+          <br>
+          <%= f.label :owner_address %>
+          <br>
+          <%= f.text_area :address, rows: 5, cols: 30, :placeholder => "Business mailing address" %>
+      </div>
+  </fieldset>
+  <br>
+  <br>
+  <fieldset>
+   <legend>Mark Information</legend>
+    <div class="field">
+        <%= f.label :description %>
+        <br>
+        <%= f.text_area :description, rows: 10, cols: 30, :placeholder => "Detailed mark description" %>
+        <br>
+        <%= f.label :colors %>
+        <br>
+        <%= f.text_field :colors, :placeholder => "List all mark colors including black and white" %>
+        <br>
+        <%= f.label :first_use_date_anywhere %>
+        <br>
+        <%= f.date_select :anywhere %>
+        <br>
+        <%= f.label :first_use_date_in_commerce %>
+        <br>
+        <%= f.date_select :commerce %>
+        <br>
+        <%= f.label :products_and_services %>
+        <br>
+        <%= f.text_field :products, :placeholder => "Associated products and services" %>
+        <br>
+        <%= f.label :check_below_if_this_an_aural_mark %>
+        <br>
+        <%= f.label :aural_mark %>
+        <%= f.radio_button :aural, "Aural" %>
+    </div>
+  </fieldset>
+  <br>
+  <br>
+  <fieldset>
+    <legend>Registration Information</legend>
+      <p>We will provide this information upon filing the trademark application.</p>
+      <br>
+      <div class="field">
+        <%= f.label :serial_number %>
+        <br>
+        <%= f.text_field :serial, :placeholder => "To be provided" %>
+        <br>
+        <%= f.label :registration_number, :placeholder => "To be provided" %>
+        <br>
+        <%= f.text_field :registration, :placeholder => "To be provided" %>
+        <br>
+        <%= f.label :next_action %>
+        <br>
+        <%= f.text_field :next, :placeholder => "To be provided" %>
+        <br>
+        <%= f.label :next_deadline %>
+        <br>
+        <%= f.date_select :deadline %>
+      </div>  
+  </fieldset>
+  <br>
+  <br>
+<div class="center">
+    <%= f.submit "Submit", class: "btn btn-md" %>
+    <% end %>
+</div>

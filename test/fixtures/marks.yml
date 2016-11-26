@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact: MyString
+  email: MyString
+  owner: MyString
+  type: 
+  address: MyString
+  description: MyString
+  colors: MyString
+  anywhere: MyString
+  commerce: MyString
+  products: MyString
+  aural: MyString
+  serial: MyString
+  registration: MyString
+  next: MyString
+  deadline: MyString
+
+two:
+  contact: MyString
+  email: MyString
+  owner: MyString
+  type: 
+  address: MyString
+  description: MyString
+  colors: MyString
+  anywhere: MyString
+  commerce: MyString
+  products: MyString
+  aural: MyString
+  serial: MyString
+  registration: MyString
+  next: MyString
+  deadline: MyString
