@@ -14,12 +14,21 @@
     margin-bottom: 30px;
     background-color: #252839;
     color: white;
+    border: 2px solid #f2b632;
 }
 
-
+.page-header {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid black;
+  background-color: #f2b632;
+  border-radius: 30px;
+}
 
 .btn-link {
   border: 2px solid black;
+  border-radius: 30px;
   margin-bottom: 20px;
   font-size: 1.2em;
   background-color:#f2b632;
@@ -28,13 +37,15 @@
 
 
 .panel-group {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .panel .panel-heading {
-    border-top: 2px solid black;
-    background-color: #f2b632;
+    border-top: 2px solid #f2b632;
+    border-bottom: 2px solid #f2b632;
+    background-color: #252839;
+    color: white;
     text-align: center;
     font-size: 1.4em;
 }

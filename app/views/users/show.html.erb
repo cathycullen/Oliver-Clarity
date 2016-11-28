@@ -8,6 +8,9 @@
       </h1>
       <strong><%= @user.email %></strong>
     </section>
+    <section>
+      <%= link_to "delete", @user, method: :delete, data: { confirm: "You sure?" } %>
+    </section>
   </aside>
 </div>
 
