@@ -11,20 +11,29 @@
 
 .jumbotron {
     margin-top: 20px;
-    margin-bottom: 30px;
-    background-color: #b5b5b7;
+    margin-bottom: 50px;
+    background-color: white;
     color: #252839;
-    border: 2px solid #f2b632;
 }
 
-.page-header {
-  width: 60%;
-  text-align: center;
-  margin: 0 auto;
-  border: 2px solid black;
-  background-color: #f2b632;
-  border-radius: 30px;
+.headline {
+   text-align: right;
+   margin-right: 25px;
+   padding-bottom: 25px;
 }
+
+.subjumbo {
+  margin-top: 30px;
+  background-color: #f2b632;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 30px;
+  border: 1px solid black;
+}
+
 
 .btn-link {
   border: 2px solid black;
@@ -67,7 +76,7 @@ header {
 }
 
 .nav-tabs li a {
-  color: #252839;
+  color: black;
 }
 
 /* footer */
