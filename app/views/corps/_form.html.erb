@@ -1,0 +1,84 @@
+<%= form_for(corp) do |f| %>
+  <% if corp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(corp.errors.count, "error") %> prohibited this entity from being saved:</h2>
+
+      <ul>
+      <%corp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br>
+  <br>
+  <fieldset>
+    <legend>Contact Information</legend>
+      <div class="field">
+          <%= f.label :contact_name %>
+          <br>
+          <%= f.text_field :contact, :placeholder => "Insert contact name" %>
+          <br>
+          <%= f.label :contact_email %>
+          <br>
+          <%= f.text_field :email, :placeholder => "Insert contact email" %>
+      </div>
+  </fieldset>
+  <br>
+  <br>
+  <fieldset>
+    <legend>Entity Information</legend>
+      <div class="field">
+          <%= f.label :entity_name %>
+          <br>
+          <%= f.text_field :entity, :placeholder => "Insert the entity's name" %>
+          <br>
+          <%= f.label :owners %>
+          <br>
+          <%= f.text_area :owners, :placeholder => "Insert the name and ownership interest of each owner" %>
+          <br>
+          <%= f.label :office_address %>
+          <br>
+          <%= f.text_area :office, rows: 5, cols: 30, :placeholder => "Insert the address of the principal place of business" %>
+          <br>
+          <%= f.label :state %>
+          <%= f.text_field :state, :placeholder => "Insert the state in which the entity is to be created" %>
+          <br>
+          <%= f.label :entity_type %>
+          <%= f.text_field :format, :placeholder => "Insert the type of entity you are creating (e.g. corporation, LLC, etc.)" %>
+          <br>
+          <%= f.label :products_and_services %>
+          <%= f.text_area :business, :placeholder => "What goods and services will the business offer?" %>
+          <br>
+          <%= f.label :registered_agent %>
+          <%= f.text_field :regagent, :placeholder => "Insert the name of the registered agent" %>
+          <br>
+          <%= f.label :registered_office %>
+          <%= f.text_area :regoffice, rows: 5, cols: 30, :placeholder => "Insert the address of the registered office"
+      </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>Incorporation Information</legend>
+      <p>We will provide this information upon filing the trademark application.</p>
+      <br>
+      <div class="field">
+        <%= f.label :date_of_incorporation %>
+        <br>
+        <%= f.text_field :incorporation, :placeholder => "To be provided" %>
+        <br>
+        <%= f.label :employer_identification_number, :placeholder => "To be provided" %>
+        <br>
+        <%= f.text_field :ein, :placeholder => "To be provided" %>
+        <br>
+        <%= f.label :next_action %>
+        <br>
+        <%= f.text_field :next, :placeholder => "To be provided" %>
+      </div>  
+  </fieldset>
+  <br>
+  <br>
+<div class="center">
+    <%= f.submit "Submit", class: "btn btn-md" %>
+    <% end %>
+</div>

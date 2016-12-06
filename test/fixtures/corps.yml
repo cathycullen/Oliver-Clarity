@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contact: MyString
+  email: MyString
+  entity: MyString
+  owners: MyString
+  office: MyString
+  state: 
+  business: MyString
+  regagent: MyString
+  regoffice: MyString
+  incorporation: MyString
+  ein: MyString
+  next: MyString
+
+two:
+  contact: MyString
+  email: MyString
+  entity: MyString
+  owners: MyString
+  office: MyString
+  state: 
+  business: MyString
+  regagent: MyString
+  regoffice: MyString
+  incorporation: MyString
+  ein: MyString
+  next: MyString

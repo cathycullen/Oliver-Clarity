@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161123155906) do
+ActiveRecord::Schema.define(version: 20161206222113) do
+
+  create_table "corps", force: :cascade do |t|
+    t.string   "contact"
+    t.string   "email"
+    t.string   "entity"
+    t.string   "owners"
+    t.string   "office"
+    t.string   "state"
+    t.string   "business"
+    t.string   "regagent"
+    t.string   "regoffice"
+    t.string   "incorporation"
+    t.string   "ein"
+    t.string   "next"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "marks", force: :cascade do |t|
     t.string   "contact"
