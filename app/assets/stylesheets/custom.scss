@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* Home Page */ 
+/* HOME */ 
 
 .center {
     text-align: center;
@@ -44,7 +44,10 @@
   margin-bottom: 20px;
   font-size: 1.2em;
   background-color:#f2b632;
-  color: #252839;
+}
+
+.btn-link a {
+  color: black;
 }
 
 
@@ -67,7 +70,8 @@
     font-size: 1.2em;
 }
 
-/* header */
+/* HEADER */
+
 header {
   background-color: white;
 }
@@ -82,7 +86,7 @@ header {
   color: black;
 }
 
-/* footer */
+/* FOOTER */
 
 footer {
   margin-top: 45px;
@@ -91,7 +95,23 @@ footer {
   background-color: #white;
 }
 
-/* contact */
+.footer_menu {
+  float: right;
+  margin-right: 25px;
+  list-style: none;
+}
+
+.footer_menu li {
+   display: inline;
+   padding-left: 15px;
+}
+
+.footer_menu a {
+  color: black;
+  
+}
+
+/* CONTACT */
 
 address {
   margin-top: 20px;
@@ -109,7 +129,20 @@ address {
   color:  #f2b632;
 }
 
-/* forms */
+/* ABOUT */
+
+.teaser {
+  font-size: 1.2em;
+}
+
+table {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-top: 2px solid #f2b632;
+  border-bottom: 2px solid #f2b632;
+}
+
+/* FORMS */
 
 .field {
   margin-left: 25px;
@@ -159,7 +192,7 @@ input {
 }
 
 
-/* sidebar */
+/* SIDEBAR */
 
 aside {
   section.user_info {

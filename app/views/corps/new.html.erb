@@ -1,0 +1,49 @@
+<div class="jumbotron center">
+  <h2>New Entity</h2>
+  <h4>Answers to FAQ and Intake Form</h4>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">Do I need a seperate entity for my business?</div>
+      <div class="panel-body">An entity should be created if a business has multiple owners or any time a third party can 
+      create a liability for which an owner could be found legally responsible. For example, entity creation is recommended if the 
+      business has employees or contractors; without it, the individual owners of the business may be personally liable for business
+      debts and obligations.
+      </div>
+  </div>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">In which state should I incorporate?</div>
+      <div class="panel-body">It is a widely-held belief that businesses should incorporate in certain “business friendly” states like 
+      Delaware or Nevada. However, except in unusual circumstances, it is generally cheapest and easiest to incorporate in the state in 
+      which the controlling or managing owner lives or where the business will have its principal office.
+      </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">What kind of entity should I create?</div>
+      <div class="panel-body">Most businesses opt to be a corporation or limited liability company, and there are different opinions
+      on which is optimal. Properly created and managed, both protect owners from personal liability for business assets. The tax 
+      consequences also tend to be the same, particularly at start-up. Whenever possible, tax obligations should “pass through” the entity to the individual owners such that the
+      entity pays no taxes. LLCs and corporations that qualify for subchapter S treatment enjoy pass through status. LLC's tend to be slightly
+      more expensive to form in terms of administrative costs  and have fewer structural and paperwork requirements. However, adhering to the 
+      corporation’s slightly more stringent paperwork requirements often provides a valuable source of evidence in the event a plaintiff 
+      sues the owner of a corporation alleging that he or she should be liable for its obligations. Accounting rules with respect to
+      limited liability companies give the business more flexibility in terms of distributing money to owners. State and local filing fees
+      and regulations should also be considered.
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Form Instructions</div>
+      <div class="panel-body">Please complete this form in full. If you have any questions, do not hesitate to contact us.
+      </div>
+  </div>
+</div>
+
+<%= render 'form', corp: @corp %>
+
+<%= link_to 'Back', corps_path %>

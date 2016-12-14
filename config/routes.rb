@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :marks
   resources :corps
+  resources :minutes
   
   get 'sessions/new'
 

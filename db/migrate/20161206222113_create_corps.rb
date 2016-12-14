@@ -7,6 +7,7 @@ class CreateCorps < ActiveRecord::Migration[5.0]
       t.string :owners
       t.string :office
       t.string :state
+      t.string :company
       t.string :business
       t.string :regagent
       t.string :regoffice
