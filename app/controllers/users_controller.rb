@@ -64,4 +64,9 @@ def correct_user
   @user = User.find(params[:id])
   redirect_to(root_url) unless current_user?(@user)
 end
+
+def role?(role)
+  roles.any? { |r| r.name.underscore.to_sym == role }
+end
+
 end

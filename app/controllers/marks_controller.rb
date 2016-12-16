@@ -18,6 +18,13 @@ def create
 end
     
 def update
+    @mark = Mark.find(params[:id])
+    authorize @mark
+    if @mark.update(post_params)
+        redirect_to @mark
+    else
+        render :edit
+    end
 end
     
 def edit
