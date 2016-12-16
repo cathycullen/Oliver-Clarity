@@ -8,10 +8,63 @@
       </h1>
       <strong><%= @user.email %></strong>
     </section>
-    <section>
-      <%= link_to "Delete Account", @user, method: :delete, data: { confirm: "You sure?" } %>
-    </section>
   </aside>
 </div>
+    
+    <br>
+    <br>
+    <fieldset>
+      <legend>Files</legend>
+      <div class="center">
+        <button class="btn btn-link"><%= link_to "New File", '#' %></button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Calendar</legend>
+      <div class="center">
+        <button class="btn btn-link"><%= link_to "New Event", '#' %></button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>To Do Lists</legend>
+      <div class="center">
+        <button class="btn btn-link"><%= link_to "New List", '#' %></button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Attorneys</legend>
+      <div class="center">
+        <button class="btn btn-link"><%= link_to "Find Attorneys", '#' %></button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Spend</legend>
+        <p>Legal spend for [MONTH, YEAR] is $</p>
+        <p>Legal spend for [YEAR] to date is $</p>
+      <div class="center">
+        <button class="btn btn-link"><%= link_to "Add New Invoice", '#' %></button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Companies</legend>
+      <div class="center button-grp">
+        <button class="btn btn-link"><%= link_to "New Entity", new_corp_path %></button>
+        <button class="btn btn-link"><%= link_to "New Minutes", new_minute_path %></button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Trademarks</legend>
+      <div class="center">
+        <button class="btn btn-link"><%= link_to "Register a New Trademark", new_mark_path %></button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>WebDocs</legend>
+      <div class="center">
+        <button class="btn btn-link"><%= link_to "Create New TOS", '#' %></button>
+      </div>
+    </fieldset>
+    
+  
 
 

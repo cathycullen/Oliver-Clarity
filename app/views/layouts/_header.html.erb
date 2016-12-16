@@ -9,14 +9,9 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><%= link_to "Dashboard", current_user %></li>
-              <li><%= link_to "Open a New File", '#' %></li>
-              <li><%= link_to "Manage Events", '#' %></li>
-              <li><%= link_to "Manage Attorneys", '#' %></li>
-              <li><%= link_to "Register a New Trademark", new_mark_path %></li>
-              <li><%= link_to "Create a New Entity", new_corp_path %></li>
-              <li><%= link_to "Take Meeting Minutes", new_minute_path %></li>
-              <li><%= link_to "Create New TOS", '#' %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+              <li><%= link_to "Support", '#' %></li>
+              <li><%= link_to "Delete Account", @user, method: :delete, data: { confirm: "You sure?" } %></li>
               <li class="divider"></li>
               <li><%= link_to "Log out", logout_path, method: "delete" %></li>
             </ul>
