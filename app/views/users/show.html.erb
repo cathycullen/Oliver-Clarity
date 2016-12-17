@@ -15,38 +15,47 @@
     <br>
     <fieldset>
       <legend>Files</legend>
+      <p><%= @user.name %>'s files:</p>
       <div class="center">
         <button class="btn btn-link"><%= link_to "New File", '#' %></button>
+        <button class="btn btn-link"><%= link_to "New Document", '#' %></button>
       </div>
     </fieldset>
     <fieldset>
       <legend>Calendar</legend>
+      <p><%= @user.name %>'s calendar:</p>
       <div class="center">
         <button class="btn btn-link"><%= link_to "New Event", '#' %></button>
       </div>
     </fieldset>
     <fieldset>
       <legend>To Do Lists</legend>
+      <p><%= @user.name %>'s to do list:</p>
       <div class="center">
         <button class="btn btn-link"><%= link_to "New List", '#' %></button>
+        <button class="btn btn-link"><%= link_to "New Item", '#' %></button>
       </div>
     </fieldset>
     <fieldset>
       <legend>Attorneys</legend>
+      <p><%= @user.name %>'s virtual legal department:</p>
       <div class="center">
         <button class="btn btn-link"><%= link_to "Find Attorneys", '#' %></button>
       </div>
     </fieldset>
     <fieldset>
-      <legend>Spend</legend>
+      <legend>Budget</legend>
+        <p>Legal budget for [YEAR] is $</p>
         <p>Legal spend for [MONTH, YEAR] is $</p>
         <p>Legal spend for [YEAR] to date is $</p>
+        <p>Remainder is $</p>
       <div class="center">
-        <button class="btn btn-link"><%= link_to "Add New Invoice", '#' %></button>
+        <button class="btn btn-link"><%= link_to "Update Budget", '#' %></button>
       </div>
     </fieldset>
     <fieldset>
       <legend>Companies</legend>
+      <p><%= @user.name %>'s companies:</p>
       <div class="center button-grp">
         <button class="btn btn-link"><%= link_to "New Entity", new_corp_path %></button>
         <button class="btn btn-link"><%= link_to "New Minutes", new_minute_path %></button>
@@ -54,12 +63,14 @@
     </fieldset>
     <fieldset>
       <legend>Trademarks</legend>
+      <p><%= @user.name %>'s trademarks:</p>
       <div class="center">
         <button class="btn btn-link"><%= link_to "Register a New Trademark", new_mark_path %></button>
       </div>
     </fieldset>
     <fieldset>
       <legend>WebDocs</legend>
+      <p><%= @user.name %>'s web documents:</p>
       <div class="center">
         <button class="btn btn-link"><%= link_to "Create New TOS", '#' %></button>
       </div>

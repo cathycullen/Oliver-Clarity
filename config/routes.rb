@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :marks
   resources :corps
   resources :minutes
+  resources :attorneys
   
   get 'sessions/new'
 
