@@ -4,7 +4,7 @@
       <h2><%= pluralize(corp.errors.count, "error") %> prohibited this entity from being saved:</h2>
 
       <ul>
-      <%corp.errors.full_messages.each do |message| %>
+      <% corp.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
