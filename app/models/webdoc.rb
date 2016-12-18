@@ -1,0 +1,2 @@
+class Webdoc < ApplicationRecord
+end

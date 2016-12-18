@@ -1,0 +1,63 @@
+<%= form_for(webdoc) do |f| %>
+    <% if webdoc.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(webdoc.errors.count, "error") %> prohibited this form from being submitted.</h2>
+                <ul>
+                    <% webdoc.errors.full_messages.each do |message| %>
+                    <li><%= messages %></li>
+                    <% end %>
+                </ul>
+        </div>
+         <% end %>
+<br>
+<br>
+<fieldset>
+    <legend>Contact Information</legend>
+        <div class="field">
+          <%= f.label :contact_name %>
+          <br>
+          <%= f.text_field :name, :placeholder => "Insert contact name" %>
+          <br>
+          <%= f.label :contact_email %>
+          <br>
+          <%= f.text_field :email, :placeholder => "Insert contact email" %>
+        </div>
+</fieldset>
+<fieldset>
+    <legend>Website Information</legend>
+        <div class="field">
+            <%= f.label :website_owner %>
+            <br>
+            <%= f.text_field :owner, :placeholder => "Insert the website owner's name" %>
+            <br>
+            <%= f.label :website_url %>
+            <br>
+            <%= f.text_field :url, :placeholder => "Insert primary website address" %>
+            <br>
+            <%= f.label :state_in_which_your_business_is_located %>
+            <br>
+            <%= f.text_field :state %>
+            <br>
+            <%= f.label :is_your_website_aimed_at_children_under_13_years_old? %>
+            <br>
+            <%= f.label :Yes %>
+            <%= f.radio_button :children, "Yes" %>
+            <br>
+            <%= f.label :No %>
+            <%= f.radio_button :children, "No" %>
+            <br>
+            <br>
+            <%= f.label :what_products_or_services_do_you_sell_on_your_site? %>
+            <br>
+            <%= f.text_area :products, rows: 5, cols: 30 %>
+            <br>
+            <%= f.label :similar_websites %>
+            <br>
+            <%= f.text_area :similar, rows: 5, cols: 30, :placeholder => "What websites are similar to yours?" %>
+        </div>
+<br>
+<br>
+<div class="center">
+    <%= f.submit "Submit", class: "btn btn-md" %>
+    <% end %>
+</div>

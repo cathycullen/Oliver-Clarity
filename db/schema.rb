@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217002843) do
+ActiveRecord::Schema.define(version: 20161218171334) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -100,6 +100,19 @@ ActiveRecord::Schema.define(version: 20161217002843) do
     t.datetime "updated_at",      null: false
     t.string   "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "webdocs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "owner"
+    t.string   "url"
+    t.string   "state"
+    t.string   "children"
+    t.string   "products"
+    t.string   "similar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
