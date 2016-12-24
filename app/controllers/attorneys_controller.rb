@@ -1,7 +1,7 @@
 class AttorneysController < ApplicationController
     
 def index
-    @attorneys = Attorneys.all
+    @attorneys = Attorney.all
 end
 
 def new

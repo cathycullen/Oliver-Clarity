@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :minutes
   resources :attorneys
   resources :webdocs
+  resources :todos
+  resources :account_activations, only: [:edit]
   
   get 'sessions/new'
 

@@ -1,0 +1,7 @@
+<%= form_for(@todo) do |f| %>
+<div class="field">
+<%= f.label :new_item %>
+<%= f.text.field :item, :placeholder => "Enter new item" %>
+<%= f.submit "Submit", class: "btn btn-md" %>
+<% end %>
+</div>

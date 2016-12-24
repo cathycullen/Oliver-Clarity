@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161218171334) do
+ActiveRecord::Schema.define(version: 20161223213132) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -86,8 +86,9 @@ ActiveRecord::Schema.define(version: 20161218171334) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string   "name"
+  create_table "todos", force: :cascade do |t|
+    t.string   "item"
+    t.string   "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,9 +97,12 @@ ActiveRecord::Schema.define(version: 20161218171334) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "remember_digest"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
