@@ -6,21 +6,16 @@
                 <p>Empowering Entrepreneurs</p>
             </div>
 </div>
-
-<div class="container">
-    <div class="teaser">
-        <p>OliverClarity is not a law firm. We don't offer legal services.</p>
-        <p>We offer something much better!</p>
-        <p>OliverClarity is a unique management tool that empowers entrepreneurs to get what they really want from legal services: Control, Security, and Freedom of 
-        Focus.</p>
-    </div>
-    <br>
     <div class="center">
     <%= image_tag "bulb.jpg" %>
     </div>
 </div>
-<br>
 <div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body">OliverClarity is not a law firm. We don't offer legal services. We offer something much better!
+        OliverClarity is a unique management tool that empowers entrepreneurs to get what they really want from legal services: Control, Security, 
+        and Freedom of Focus.</div>
+    </div>
     <div class="panel panel-default">
         <div class="panel-body">Entrepreneurs want control over their businesses and they want their lawyers to give them the information
         needed to make good decisions. OliverClarity provides the tools to access, manage, and organize the information needed to make key choices
@@ -93,6 +88,10 @@
     minutes subject to attorney's availability. Attorney is an independent legal services provider and
     not an employee, partner, or agent of OliverClarity. See Terms of Service for more information.
 </small>
+
+<div class="center">
+    <button class="btn btn-link"><%= link_to "Featured Attorneys", lawyers_path %></button>
+</div>
 
 <div class="center">
     <button class="btn btn-link"><%= link_to "Subscribe Now", new_user_path %></button>
