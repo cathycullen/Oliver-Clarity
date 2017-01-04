@@ -117,6 +117,24 @@ footer {
   
 }
 
+/* ASIDE */
+
+aside {
+  float: right;
+  margin-right: 75px;
+  width: 30%;
+}
+
+.well {
+  border: 1px solid #f2b632;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.well a {
+   color: black;
+}
+
 /* CONTACT */
 
 address {

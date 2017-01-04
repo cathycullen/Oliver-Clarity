@@ -28,6 +28,7 @@ def update
 end
     
 def edit
+    @mark = Mark.find(params[:id])
 end
     
 def show
