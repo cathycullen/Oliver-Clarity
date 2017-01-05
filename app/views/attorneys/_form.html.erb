@@ -17,19 +17,23 @@
         <div class="field">
             <%= f.label :name %>
             <br>
-            <%= f.text_field :name, :placeholder => "Insert Name" %>
+            <%= f.text_field :name %>
             <br>
+<aside class="well">
+    <p>Contact us for more information about the hour of free consultation policy.</p>
+    <button class="btn btn-xs"><%= link_to "Contact Us", contact_path %></button>
+</aside>
             <%= f.label :mailing_address %>
             <br>
-            <%= f.text_area :address, rows: 5, cols: 30, :placeholder => "Insert Mailing Address" %>
+            <%= f.text_area :address, rows: 5, cols: 30 %>
             <br>
             <%= f.label :email %>
             <br>
-            <%= f.text_field :email, :placeholder => "Insert Email" %>
+            <%= f.text_field :email %>
             <br>
             <%= f.label :phone %>
             <br>
-            <%= f.text_field :phone, :placeholder => "Insert Phone No." %>
+            <%= f.text_field :phone %>
         </div>
 </fieldset>
 <br>
@@ -48,6 +52,13 @@
             <%= f.label :practice_areas %>
             <br>
             <%= f.text_area :practice, rows: 10, cols: 50, :placeholder => "List your practice areas, e.g. patent, contracts, litigation" %>
+            <br>
+            <aside class="well">
+                <p>Even if you charge flat fees, provide the rate you would generally charge for an hour of work.</p>
+            </aside>
+            <%= f.label :hourly_rate %>
+            <br>
+            <%= f.text_field :rate %>
         </div>
 </fieldset>
 <br>
