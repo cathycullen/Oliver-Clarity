@@ -16,11 +16,11 @@
       <div class="field">
           <%= f.label :contact_name %>
           <br>
-          <%= f.text_field :contact, :placeholder => "Insert contact name" %>
+          <%= f.text_field :contact %>
           <br>
           <%= f.label :contact_email %>
           <br>
-          <%= f.text_field :email, :placeholder => "Insert contact email" %>
+          <%= f.text_field :email %>
       </div>
   </fieldset>
   <br>
@@ -28,15 +28,17 @@
   <fieldset>
     <legend>Owner Information</legend>
       <div class="field">
+         <aside class="well">
+          <p>You should use the 'TM' symbol (or 'SM' for service marks, i.e. marks associated with services instead of products) with your mark until
+          it is registered. After that, you use (r).</p>
+         </aside>
           <%= f.label :owner_name %>
           <br>
-          <%= f.text_field :owner, :placeholder => "Insert mark owner's name" %>
-          <br>
-          <%= f.label :owner_type %>
+          <%= f.text_field :owner %>
           <br>
           <%= f.label :owner_address %>
           <br>
-          <%= f.text_area :address, rows: 5, cols: 30, :placeholder => "Business mailing address" %>
+          <%= f.text_area :address, rows: 5, cols: 30 %>
       </div>
   </fieldset>
   <br>
@@ -46,11 +48,11 @@
     <div class="field">
         <%= f.label :description %>
         <br>
-        <%= f.text_area :description, rows: 10, cols: 30, :placeholder => "Detailed mark description" %>
+        <%= f.text_area :description, rows: 10, cols: 30 %>
         <br>
         <%= f.label :colors %>
         <br>
-        <%= f.text_field :colors, :placeholder => "List all mark colors including black and white" %>
+        <%= f.text_field :colors %>
         <br>
         <%= f.label :first_use_date_anywhere %>
         <br>
@@ -63,36 +65,39 @@
         <%= f.label :products_and_services %>
         <br>
         <%= f.text_field :products, :placeholder => "Associated products and services" %>
-        <br>
-        <%= f.label :check_below_if_this_an_aural_mark %>
-        <br>
-        <%= f.label :aural_mark %>
-        <%= f.radio_button :aural, "Aural" %>
     </div>
   </fieldset>
   <br>
   <br>
   <fieldset>
+    <legend>Specimen</legend>
+      <p>You must provide two specimens of the mark. One just shows the marks itself. The second shows the mark as it is used
+      in commerce. Select files to upload below. They will be maintained in the 'Files' section of your Dashboard.</p>
+      <p> If you have questions about the specimens, please contact your attorney.</p>
+        <button class="btn btn-xs"><%= link_to 'Get Help', contact_path %></button>
+        <button class="btn btn-xs"><%= link_to 'Upload', '#' %></button>
+  </fieldset>
+  <br>
+  <br>
+  <fieldset>
     <legend>Registration Information</legend>
-      <p>We will provide this information upon filing the trademark application.</p>
-      <br>
-      <div class="field">
+    <p>DO NOT COMPLETE THIS SECTION. This information will be provided upon submission of the application.</p>
+    <br>
         <%= f.label :serial_number %>
         <br>
-        <%= f.text_field :serial, :placeholder => "To be provided" %>
+        <%= f.text_field :serial, class: 'form_control' %>
         <br>
-        <%= f.label :registration_number, :placeholder => "To be provided" %>
+        <%= f.label :registration_number %>
         <br>
-        <%= f.text_field :registration, :placeholder => "To be provided" %>
+        <%= f.text_field :registration, class: 'form_control' %>
         <br>
         <%= f.label :next_action %>
         <br>
-        <%= f.text_field :next, :placeholder => "To be provided" %>
+        <%= f.text_field :next, class: 'form_control' %>
         <br>
         <%= f.label :next_deadline %>
         <br>
-        <%= f.date_select :deadline %>
-      </div>  
+        <%= f.date_select :deadline, class: 'form_control' %>
   </fieldset>
   <br>
   <br>

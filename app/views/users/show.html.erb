@@ -16,11 +16,9 @@
     <fieldset>
       <legend>Files      <span class="glyphicon glyphicon-folder-open"></span></legend>
       <p><%= @user.name %>'s files:</p>
-      <div class="center button-grp btn-xs">
-        <p>Create a new folder:</p>
-        <button class="btn btn-link"><%= link_to "New Folder", '#' %></button>
-        <p>Add a document to a folder:</p>
-        <button class="btn btn-link"><%= link_to "Add Document", '#' %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "New Folder", '#' %></button>
+        <button class="btn btn-xs"><%= link_to "Add Document", '#' %></button>
       </div>
     </fieldset>
     <br>
@@ -28,8 +26,8 @@
     <fieldset>
       <legend>Calendar      <span class="glyphicon glyphicon-calendar"></span></legend>
       <p><%= @user.name %>'s calendar:</p>
-      <div class="center button-grp btn-xs">
-        <button class="btn btn-link"><%= link_to "Add Event", '#' %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "Add Event", '#' %></button>
       </div>
     </fieldset>
     <br>
@@ -37,8 +35,8 @@
     <fieldset>
       <legend>To Do Lists      <span class="glyphicon glyphicon-text-size"></span></legend>
       <p><%= @user.name %>'s to do list:</p>
-      <div class="center button-grp btn-xs">
-        <button class="btn btn-link"><%= link_to "New To Do Item", '#' %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "New To Do Item", '#' %></button>
       </div>
     </fieldset>
     <br>
@@ -46,8 +44,8 @@
     <fieldset>
       <legend>Attorneys      <span class="glyphicon glyphicon-briefcase"></span></legend>
       <p><%= @user.name %>'s virtual legal department:</p>
-      <div class="center button-grp btn-xs">
-        <button class="btn btn-link"><%= link_to "Find Attorneys", '#' %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "Find Attorneys", '#' %></button>
       </div>
     </fieldset>
     <br>
@@ -58,8 +56,8 @@
         <p>Legal spend for [MONTH, YEAR] is $</p>
         <p>Legal spend for [YEAR] to date is $</p>
         <p>Remainder is $</p>
-      <div class="center button-grp btn-xs">
-        <button class="btn btn-link"><%= link_to "Update Budget", '#' %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "Update Budget", '#' %></button>
       </div>
     </fieldset>
     <br>
@@ -67,11 +65,9 @@
     <fieldset>
       <legend>Companies        <span class="glyphicon glyphicon-shopping-cart"></span></legend>
         <p><%= @user.name %>'s companies:</p>
-      <div class="center button-grp btn-xs">
-        <p>Form a new corporation, LLC, or other entity:</p>
-        <button class="btn btn-link"><%= link_to "New Entity", new_corp_path %></button>
-        <p>Record new meeting minutes:</p>
-        <button class="btn btn-link"><%= link_to "New Minutes", new_minute_path %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "New Entity", new_corp_path %></button>
+        <button class="btn btn-xs"><%= link_to "New Minutes", new_minute_path %></button>
       </div>
     </fieldset>
     <br>
@@ -79,8 +75,9 @@
     <fieldset>
       <legend>Trademarks      <span class="glyphicon glyphicon-registration-mark"></span></legend>
       <p><%= @user.name %>'s trademarks:</p>
-      <div class="center button-grp btn-xs">
-        <button class="btn btn-link"><%= link_to "Register a New Trademark", new_mark_path %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "Register a New Trademark", new_mark_path %></button>
+        <button class="btn btn-xs"><%= link_to "Edit an Existing Mark", edit_mark_path %></button>
       </div>
     </fieldset>
     <br>
@@ -88,8 +85,8 @@
     <fieldset>
       <legend>WebDocs      <span class="glyphicon glyphicon-floppy-disk"></span></legend>
         <p><%= @user.name %>'s web documents:</p>
-      <div class="center button-grp btn-xs">
-        <button class="btn btn-link"><%= link_to "Create New TOS", new_webdoc_path %></button>
+      <div class="center">
+        <button class="btn btn-xs"><%= link_to "Create New TOS", new_webdoc_path %></button>
       </div>
     </fieldset>
     

@@ -1,3 +1,64 @@
 <div class="center jumbotron">
     <h2>Update Trademark Information</h2>
 </div>
+
+<%= form_for(mark) do |f| %>
+  <% if mark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mark.errors.count, "error") %> prohibited this mark from being saved:</h2>
+      <ul>
+      <% mark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<fieldset>
+    <legend>Contact & Mark Description</legend>
+     <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+          <%= f.label :change_contact_name %>
+          <br>
+          <%= f.text_field :contact, class: 'form_control' %>
+          <br>
+          <%= f.label :update_email_address %>
+          <br>
+          <%= f.text_field :email, class: 'form_control' %>
+          <br>
+          <%= f.label :update_mailing_address %>
+          <br>
+          <%= f.text_area :address, rows: 5, cols: 30, class: 'form_control' %>
+          <aside class="well">
+              <p>You cannot make any material changes to the mark once the application is filed. Discuss what
+              constitutes a material change to the mark with your attorney.</p>
+              <%= link_to "Get Help", contact_path %>
+          </aside>
+          <%= f.label :update_description %>
+          <%= f.text_area :description, rows: 5, cols: 30, class: 'form_control' %>
+          <%= f.label :update_colors %>
+          <%= f.text_field :colors, class: 'form_control' %>
+          <%= f.label :update_products_and_services %>
+          <%= f.text_field :products, class: 'form_control' %>
+</fieldset>
+
+<fieldset>
+    <legend>Registration</legend>
+      <div class="field">
+        <%= f.label :serial_number %>
+        <br>
+        <%= f.text_field :serial, class: 'form_control' %>
+        <br>
+        <%= f.label :registration_number %>
+        <br>
+        <%= f.text_field :registration, class: 'form_control' %>
+        <br>
+        <%= f.label :next_action %>
+        <br>
+        <%= f.text_field :next, class: 'form_control' %>
+        <br>
+        <%= f.label :next_deadline %>
+        <br>
+        <%= f.date_select :deadline, class: 'form_control' %>
+      </div>  
+  </fieldset>
