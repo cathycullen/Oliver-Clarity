@@ -1,0 +1,69 @@
+<%= form_for(attorney) do |f| %>
+    <% if attorney.errors.any?  %>
+        <div id="error_explanation">
+            <h2><%= pluralize.(attorney.error.count, "error") %> prohibited this application from being submitted.</h2>
+            
+            <ul>
+                <% attorney.errors.full_messages.each do |message| %>
+                <li><%=message %></li>
+                <% end %>
+            </ul>
+        </div>
+        <% end %>
+<br>
+<br>
+<fieldset>
+    <legend>Contact Information</legend>
+        <div class="field">
+            <%= f.label :name %>
+            <br>
+            <%= f.text_field :name %>
+            <br>
+<aside class="well">
+    <p>Contact us for more information about the hour of free consultation policy.</p>
+    <button class="btn btn-xs"><%= link_to "Contact Us", contact_path %></button>
+</aside>
+            <%= f.label :mailing_address %>
+            <br>
+            <%= f.text_area :address, rows: 5, cols: 30 %>
+            <br>
+            <%= f.label :email %>
+            <br>
+            <%= f.text_field :email %>
+            <br>
+            <%= f.label :phone %>
+            <br>
+            <%= f.text_field :phone %>
+        </div>
+</fieldset>
+<br>
+<br>
+<fieldset>
+    <legend>Practice Information</legend>
+        <div class="field">
+            <%= f.label :licensing_jurisdictions %>
+            <br>
+            <%= f.text_area :license, rows: 10, cols: 50, :placeholder => "List the courts in which you are admitted to practice." %>
+            <br>
+            <%= f.label :states_in_which_you_practice %>
+            <br>
+            <%= f.text_area :states, rows: 5, cols: 30, :placeholder => "List the states in which you practice." %>
+            <br>
+            <%= f.label :practice_areas %>
+            <br>
+            <%= f.text_area :practice, rows: 10, cols: 50, :placeholder => "List your practice areas, e.g. patent, contracts, litigation" %>
+            <br>
+            <aside class="well">
+                <p>Even if you charge flat fees, provide the rate you would generally charge for an hour of work.</p>
+            </aside>
+            <%= f.label :hourly_rate %>
+            <br>
+            <%= f.text_field :rate %>
+        </div>
+</fieldset>
+<br>
+<br>
+<div class="center">
+    <%= f.submit "Submit", class: "btn btn-md" %>
+    <% end %>
+</div>

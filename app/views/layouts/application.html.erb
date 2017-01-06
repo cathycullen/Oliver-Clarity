@@ -7,15 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!--
   <% if current_user.try(:admin?) %>
     <%= render 'layouts/header' %>
   <% end %>
--->
-<%= render 'layouts/header' %>
-  <div style = "padding-top:0px;  id="main-container" class="container">
+  <div style = "padding-top:0px;"  id="main-container" class="container">
     <div class="row">
-      <% flash.each do |name, msg| -%>
+      <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "alert alert-#{name}" %>
       <% end %>
     </div>
