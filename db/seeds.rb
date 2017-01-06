@@ -8,7 +8,7 @@ User.create!(name: "Seed User", email: "seeduser@oliverclarity.com", password: "
     User.create!(name: name, email: email, password: password, password_confirmation: password)
 end
 
-states = ['IL', 'NY', 'CA', 'MA', 'FL', 'TX', 'NJ', 'PA', 'CT', 'WA', 'LV', 'DE']
+states = ['IL', 'NY', 'CA', 'MA', 'FL', 'TX', 'NJ', 'PA', 'CT', 'WA', 'NV', 'DE']
 atty_arr = []
 
 Attorney.delete_all
