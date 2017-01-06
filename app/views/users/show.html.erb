@@ -51,13 +51,12 @@
     <br>
     <br>
     <fieldset>
-      <legend>Budget      <span class="glyphicon glyphicon-usd"></span></legend>
-        <p>Legal budget for [YEAR] is $</p>
-        <p>Legal spend for [MONTH, YEAR] is $</p>
-        <p>Legal spend for [YEAR] to date is $</p>
-        <p>Remainder is $</p>
+      <legend>Legal Spend      <span class="glyphicon glyphicon-usd"></span></legend>
+        <p>Fees accrued to date:</p>
+        <p>Expenses accrued to date:</p>
       <div class="center">
-        <button class="btn btn-xs"><%= link_to "Update Budget", '#' %></button>
+        <button class="btn btn-xs"><%= link_to "Add Expense", new_expense_path %></button>
+        <button class="btn btn-xs"><%= link_to "Add Fee", new_fee_path %></button>
       </div>
     </fieldset>
     <br>

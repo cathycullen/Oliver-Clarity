@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :webdocs
   resources :todos
   resources :account_activations, only: [:edit]
+  resources :expenses
+  resources :fees
   
   get 'sessions/new'
 
