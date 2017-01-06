@@ -1,12 +1,18 @@
+
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+#
+
 User.delete_all
 User.create!(name: "Seed User", email: "seeduser@oliverclarity.com", password: "foobar", password_confirmation: "foobar", role: 'admin')
 
-50.times do |n|
-    name = Faker::Name.name
-    email = "example-#{n+1}@oliverclarity.com"
-    password = "password"
-    User.create!(name: name, email: email, password: password, password_confirmation: password)
-end
+user = User.create!(name: 'Tripp Fried', email: 'trippe@sourcedgeneralcounsel.com', password: 'trippefried', password_confirmation: 'trippefried', role: 'admin')
+user = User.create!(name: 'cathy cullen', email: 'cathy@softwareoptions.com', password: 'cullen11', password_confirmation: 'cullen11', role: 'admin')
 
 states = ['IL', 'NY', 'CA', 'MA', 'FL', 'TX', 'NJ', 'PA', 'CT', 'WA', 'NV', 'DE']
 atty_arr = []
@@ -16,8 +22,7 @@ Attorney.delete_all
   atty_name = Faker::Name.first_name + " " + Faker::Name.last_name
   atty_email = atty_name.downcase.gsub!(/ /, '.')+"@lawyer.com"
   atty_phone = Faker::PhoneNumber.phone_number
-  address = Faker::Address.street_address + ", " + Faker::Address.city + ", "+ Faker::Address.state + ", " + Faker::Address.zip_code
-  #puts "atty_name #{atty_name} atty_email #{atty_email} atty_phone #{atty_phone} address #{address}"
+  address = Faker::Address.street_address + ", " + Faker::Address.city + ", "+ Faker::Address.state + ", " + Faker::Address.zip_code  #puts "atty_name #{atty_name} atty_email #{atty_email} atty_phone #{atty_phone} address #{address}"
   atty_arr.push(Attorney.create!(name: atty_name,
                                   email: atty_email,
                                   phone: atty_phone,

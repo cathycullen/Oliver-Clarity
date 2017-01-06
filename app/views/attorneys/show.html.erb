@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @attorney.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @attorney.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @attorney.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @attorney.phone %>
+</p>
+
+<p>
+  <strong>License:</strong>
+  <%= @attorney.license %>
+</p>
+
+<p>
+  <strong>States:</strong>
+  <%= @attorney.states %>
+</p>
+
+<p>
+  <strong>Practice:</strong>
+  <%= @attorney.practice %>
+</p>
+
+<%= link_to 'Edit', edit_attorney_path(@attorney) %> |
+<%= link_to 'Back', attorneys_path %>
