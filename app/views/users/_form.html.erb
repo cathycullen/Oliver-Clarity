@@ -1,8 +1,4 @@
-<%= render partial: 'form', :locals => {:operation => "Add "}  %>
-<%= link_to 'Back', users_path %>
 
-<!--
-<h1>Signup!</h1>
 
 <div class="row-fluid col-md-6 clearfix">
   <div class="span4 well">
@@ -19,10 +15,9 @@
         </div>
       <% end %>
     <fieldset >
+      <legend><%= operation %> User</legend>
       <%= f.input :name %>
       <%= f.input :email %>
-      <%= f.input :password, hint: false, error_html: { id: 'password_error'} %>
-      <%= f.input :password_confirmation %>
       <div class="actions">
         <%= f.submit %>
       </div>
@@ -31,4 +26,3 @@
   </div>
 </div>
 </div>
--->

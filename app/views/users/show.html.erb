@@ -1,94 +1,118 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-      <strong><%= @user.email %></strong>
-    </section>
-  </aside>
+
+
+
+<div class="row text-center ">
+  <h1><%= @user.name %></h1>
 </div>
-    
-    <br>
-    <br>
-    <fieldset>
-      <legend>Files      <span class="glyphicon glyphicon-folder-open"></span></legend>
-      <p><%= @user.name %>'s files:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "New Folder", '#' %></button>
-        <button class="btn btn-xs"><%= link_to "Add Document", '#' %></button>
+<div class="row">
+  <!-- <div class="col-sm-3"></div> -->
+  <div class="col-sm-3">
+    <div class="panel panel-default  text-center price-headline">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h4>Annual Budget</h4>
+        </div>
       </div>
-    </fieldset>
-    <br>
-    <br>
-    <fieldset>
-      <legend>Calendar      <span class="glyphicon glyphicon-calendar"></span></legend>
-      <p><%= @user.name %>'s calendar:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "Add Event", '#' %></button>
+      <div class="panel-body text-center price-headline">
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@annual_budget,{precision: 0,unit: ''})%></h4>
       </div>
-    </fieldset>
-    <br>
-    <br>
-    <fieldset>
-      <legend>To Do Lists      <span class="glyphicon glyphicon-text-size"></span></legend>
-      <p><%= @user.name %>'s to do list:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "New To Do Item", '#' %></button>
+    </div><!-- panel default -->
+  </div><!-- col-sm-3 -->
+
+  <div class="col-sm-3">
+    <div class="panel panel-default  text-center price-headline">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h4>Spend This Month</h4>
+        </div>
       </div>
-    </fieldset>
-    <br>
-    <br>
-    <fieldset>
-      <legend>Attorneys      <span class="glyphicon glyphicon-briefcase"></span></legend>
-      <p><%= @user.name %>'s virtual legal department:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "Find Attorneys", lawyers_path %></button>
+      <div class="panel-body text-center price-headline">
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@spend_this_month,{precision: 0,unit: ''})%></h4>
       </div>
-    </fieldset>
-    <br>
-    <br>
-    <fieldset>
-      <legend>Legal Spend      <span class="glyphicon glyphicon-usd"></span></legend>
-        <p>Fees accrued to date:</p>
-        <p>Expenses accrued to date:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "Add Expense", new_expense_path %></button>
-        <button class="btn btn-xs"><%= link_to "Add Fee", new_fee_path %></button>
-      </div>
-    </fieldset>
-    <br>
-    <br>
-    <fieldset>
-      <legend>Companies        <span class="glyphicon glyphicon-shopping-cart"></span></legend>
-        <p><%= @user.name %>'s companies:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "New Entity", new_corp_path %></button>
-        <button class="btn btn-xs"><%= link_to "New Minutes", new_minute_path %></button>
-      </div>
-    </fieldset>
-    <br>
-    <br>
-    <fieldset>
-      <legend>Trademarks      <span class="glyphicon glyphicon-registration-mark"></span></legend>
-      <p><%= @user.name %>'s trademarks:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "Register a New Trademark", new_mark_path %></button>
-        <button class="btn btn-xs"><%= link_to "Edit an Existing Mark", edit_mark_path %></button>
-      </div>
-    </fieldset>
-    <br>
-    <br>
-    <fieldset>
-      <legend>WebDocs      <span class="glyphicon glyphicon-floppy-disk"></span></legend>
-        <p><%= @user.name %>'s web documents:</p>
-      <div class="center">
-        <button class="btn btn-xs"><%= link_to "Create New TOS", new_webdoc_path %></button>
-      </div>
-    </fieldset>
-    
-  
+    </div><!-- panel default -->
+  </div><!-- col-sm-3 -->
 
 
+  <div class="col-sm-3">
+    <div class="panel panel-default text-center price-headline">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h4>Spend This Year</h4>
+        </div>
+      </div>
+      <div class="panel-body text-center price-headline">
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@spend_this_year,{precision: 0,unit: ''})%></h4>
+      </div>
+    </div><!-- panel default -->
+  </div><!-- col-sm-3 -->
+
+  <div class="col-sm-3">
+    <div class="panel panel-default  text-center">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h4>Remaining</h4>
+        </div>
+      </div>
+      <div class="panel-body text-center price-headline">
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@remaining,{precision: 0,unit: ''})%></h4>
+      </div>
+    </div><!-- panel default -->
+  </div><!-- col-sm-3 -->
+</div><!-- row -->
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <i class="fa fa-legal pull-left" style="padding-right: 20px;"></i>
+          <h4>Lawyers</h4>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0;">
+        <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user.attorneys.each do |attorney| %>
+              <tr>
+                <td><%= attorney.name %></td>
+                <td><%= attorney.email %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div><!-- panel body -->
+    </div><!-- panel default -->
+  </div><!-- col -->
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <i class="fa fa-check pull-left" style="padding-right: 20px;"></i>
+          <h4>Todo</h4>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0;">
+        <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
+          <thead>
+            <tr>
+              <th>Task</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @todos.each do |task| %>
+              <tr>
+                <td><%= task.item %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div><!-- panel body -->
+    </div><!-- panel default -->
+  </div><!-- col-md-6-->
+</div><!-- row -->

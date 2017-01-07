@@ -18,8 +18,9 @@ gem 'turbolinks',              '5.0.1'
 gem 'jbuilder',                '2.4.1'
 gem 'pundit',                  '1.1.0'
 gem 'state_machine',           '1.2.0'
-gem 'simple_form'
-
+gem 'simple_form',             '3.3.1'
+gem 'pry',                     '0.10.4'
+gem "font-awesome-rails"
 group :development, :test do
   gem 'sqlite3', '1.3.12'
   gem 'byebug',  '9.0.0', platform: :mri
