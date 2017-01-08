@@ -48,3 +48,8 @@ Todo.delete_all
     todo = Todo.create!(item: 'ToDo 2', user_id: user.id)
     todo = Todo.create!(item: 'ToDo 3', user_id: user.id)
 end
+
+User.all.each do |user|
+  user.activated = true
+  user.save
+end
