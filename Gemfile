@@ -20,7 +20,7 @@ gem 'pundit',                  '1.1.0'
 gem 'state_machine',           '1.2.0'
 gem 'simple_form',             '3.3.1'
 gem 'pry',                     '0.10.4'
-gem "font-awesome-rails"
+gem "font-awesome-rails",      '4.7.0.0'
 group :development, :test do
   gem 'sqlite3', '1.3.12'
   gem 'byebug',  '9.0.0', platform: :mri
