@@ -1,7 +1,8 @@
+require 'pry'
 class UsersController < ApplicationController
 
 before_action :logged_in_user, only: [:edit, :update, :destroy]
-before_action :correct_user,   only: [:edit, :update]
+before_action :correct_user,   only: [:edit, :update, :show]
 before_action :authorize
 
 def index
@@ -80,6 +81,11 @@ end
 
 def correct_user
   @user = User.find(params[:id])
-  redirect_to(root_url) unless current_user?(@user)  || current_user.try(:admin?)
+  redirect_to(root_url) unless authorized?(@user)
 end
+
+def authorized?(user)
+   current_user?(user)  || current_user.try(:admin?)
+end
+
 end
