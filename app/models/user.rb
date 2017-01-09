@@ -14,6 +14,12 @@ class User < ApplicationRecord
     has_many :todos, dependent: :destroy
     has_many :users_attorney
     has_many :attorneys, through: :users_attorney, dependent: :destroy
+    has_many :corps
+    has_many :marks
+    has_many :webdocs
+    has_many :minutes
+    has_many :fees
+    has_many :expenses
 
     ADMIN = 'admin'
     def admin?

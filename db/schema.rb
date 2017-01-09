@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109002803) do
+ActiveRecord::Schema.define(version: 20170109012136) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20170109002803) do
     t.datetime "next"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_corps_on_user_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -66,6 +68,8 @@ ActiveRecord::Schema.define(version: 20170109002803) do
     t.decimal  "amount",     precision: 12, scale: 2
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
   create_table "fees", force: :cascade do |t|
@@ -75,6 +79,8 @@ ActiveRecord::Schema.define(version: 20170109002803) do
     t.decimal  "charge",     precision: 12, scale: 2
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_fees_on_user_id"
   end
 
   create_table "marks", force: :cascade do |t|
@@ -95,6 +101,8 @@ ActiveRecord::Schema.define(version: 20170109002803) do
     t.string   "deadline"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_marks_on_user_id"
   end
 
   create_table "minutes", force: :cascade do |t|
@@ -110,6 +118,8 @@ ActiveRecord::Schema.define(version: 20170109002803) do
     t.string   "additional"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_minutes_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -161,6 +171,8 @@ ActiveRecord::Schema.define(version: 20170109002803) do
     t.string   "similar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_webdocs_on_user_id"
   end
 
 end
