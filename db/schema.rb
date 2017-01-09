@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106212300) do
+ActiveRecord::Schema.define(version: 20170109002803) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,16 +29,16 @@ ActiveRecord::Schema.define(version: 20170106212300) do
     t.string   "license"
     t.string   "states"
     t.string   "practice"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "rate"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.decimal  "rate",       precision: 7, scale: 2
   end
 
   create_table "budgets", force: :cascade do |t|
-    t.integer  "annual_amount"
+    t.decimal  "annual_amount", precision: 12, scale: 2
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.index ["user_id"], name: "index_budgets_on_user_id"
   end
 
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20170106212300) do
     t.string   "regoffice"
     t.string   "incorporation"
     t.string   "ein"
-    t.string   "next"
+    t.datetime "next"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -63,18 +63,18 @@ ActiveRecord::Schema.define(version: 20170106212300) do
   create_table "expenses", force: :cascade do |t|
     t.string   "date"
     t.string   "vendor"
-    t.string   "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal  "amount",     precision: 12, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "fees", force: :cascade do |t|
     t.string   "date"
-    t.string   "rate"
-    t.string   "hours"
-    t.string   "charge"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal  "rate",       precision: 12, scale: 2
+    t.integer  "hours"
+    t.decimal  "charge",     precision: 12, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "marks", force: :cascade do |t|
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 20170106212300) do
     t.string   "aural"
     t.string   "serial"
     t.string   "registration"
-    t.string   "next"
+    t.datetime "next"
     t.string   "deadline"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
