@@ -16,11 +16,11 @@ user = User.create!(name: 'cathy cullen', email: 'cathy@softwareoptions.com', pa
 
 states = ['IL', 'NY', 'CA', 'MA', 'FL', 'TX', 'NJ', 'PA', 'CT', 'WA', 'NV', 'DE']
 atty_arr = []
-
 Attorney.delete_all
 5.times do |n|
   atty_name = Faker::Name.first_name + " " + Faker::Name.last_name
-  atty_email = atty_name.downcase.gsub!(/ /, '.')+"@lawyer.com"
+  atty_email = atty_name.downcase.gsub!(/ /, '.').gsub("'", '')+"@lawyer.com"
+
   atty_phone = Faker::PhoneNumber.phone_number
   address = Faker::Address.street_address + ", " + Faker::Address.city + ", "+ Faker::Address.state + ", " + Faker::Address.zip_code  #puts "atty_name #{atty_name} atty_email #{atty_email} atty_phone #{atty_phone} address #{address}"
   atty_arr.push(Attorney.create!(name: atty_name,
@@ -34,12 +34,16 @@ end
 
 Budget.delete_all
 Todo.delete_all
+Mark.delete_all
+Corp.delete_all
+Expense.delete_all
+Fee.delete_all
 
 10.times do |n|
     name = Faker::Name.first_name + " " + Faker::Name.last_name
-    email = name.downcase.gsub!(/ /, '.')+"@gmail.com"
+    email = name.downcase.gsub!(/ /, '.').gsub("'", '')+"@gmail.com"
     password = "password"
-    #puts "user #{name} email #{email}"
+    puts "create user #{name} email #{email}"
     user = User.create!(name: name, email: email, activated: true, password: password, password_confirmation: password, role: 'user')
     budget = Budget.create!(annual_amount: rand(100000..1000000), user_id: user.id)
     atty = atty_arr.sample
@@ -59,6 +63,9 @@ businesses = ["Marketing", "Technology", "Consulting", "Legal", "Retail", "Food 
 eins = ["38-3679495", "38-3689977", "38-3779853"]
 colors = ["red", "black", "blue"]
 registrations = ["2,773,556", "2,943,671", "2,897,057"]
+rates = [150.0, 450.0, 250.0, 600.0, 125.0]
+hours = [2.5, 10, 8, 20, 5.5, 40, 12.25]
+
 3.times do |i|
   contact = Faker::Name.first_name + " " + Faker::Name.last_name
   contact_email = contact.downcase.gsub!(/ /, '.')+"@gmail.com"
@@ -94,5 +101,20 @@ registrations = ["2,773,556", "2,943,671", "2,897,057"]
                         registration: registrations.sample,
                         next: Date.today+(100*rand()),
                         deadline: Date.today+(100*rand()),
+    )
+
+    expense = Expense.create!(user_id: user.id,
+                              date: Date.today-(500*rand()),
+                              vendor: "vendor name",
+                              amount: (rand() * 3000).round(2)
+    )
+    rate = rates.sample
+    how_long = hours.sample
+    charge = rate * how_long
+    fee = Fee.create!(user_id: user.id,
+                      date: Date.today-(500*rand()),
+                      rate: rate,
+                      hours: how_long,
+                      charge: charge
     )
 end
