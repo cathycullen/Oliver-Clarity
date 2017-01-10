@@ -18,6 +18,8 @@ def show
     @remaining = @budget.remaining
   end
   @todos = Todo.where(:user_id => @user.id)
+  @fees_total = 0
+  @expenses_total = 0
 end
 
 def new

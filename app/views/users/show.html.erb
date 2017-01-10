@@ -116,3 +116,144 @@
     </div><!-- panel default -->
   </div><!-- col-md-6-->
 </div><!-- row -->
+
+
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <i class="fa fa-group pull-left" style="padding-right: 20px;"></i>
+          <h4>Companies</h4>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0;">
+        <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Business</th>
+              <th>Next Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user.corps.each do |corp| %>
+              <tr>
+                <td><%= corp.company %></td>
+                <td><%= corp.business %></td>
+                <td><%= corp.next.strftime("%m/%d/%Y") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div><!-- panel body -->
+    </div><!-- panel default -->
+  </div><!-- col -->
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <i class="fa fa-certificate pull-left" style="padding-right: 20px;"></i>
+          <h4>Trademarks</h4>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0;">
+        <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
+          <thead>
+            <tr>
+              <th>Serial</th>
+              <th>Description</th>
+              <th>registration</th>
+              <th>Next Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user.marks.each do |mark| %>
+              <tr>
+                <td><%= mark.serial %></td>
+                  <td><%= mark.description %></td>
+                    <td><%= mark.registration %></td>
+                      <td><%= mark.next.strftime("%m/%d/%Y") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div><!-- panel body -->
+    </div><!-- panel default -->
+  </div><!-- col-md-6-->
+</div><!-- row -->
+<div class="row">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <i class="fa fa-usd pull-left" style="padding-right: 20px;"></i>
+            <h4>Expenses</h4>
+          </div>
+        </div>
+        <div class="panel-body" style="padding:0;">
+          <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Vendor</th>
+                <th>Amount</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @user.expenses.each do |expense| %>
+                <tr>
+                  <% add_to_expenses_total(expense.amount) %>
+                  <td><%= expense.date.strftime("%m/%d/%Y") %></td>
+                  <td><%= expense.vendor %></td>
+                  <td>$<%= ActiveSupport::NumberHelper::number_to_currency(expense.amount,{precision: 2,unit: ''}) %></td>
+                  <td>$<%= ActiveSupport::NumberHelper::number_to_currency(@expenses_total,{precision: 2,unit: ''}) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div><!-- panel body -->
+      </div><!-- panel default -->
+    </div><!-- col -->
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <i class="fa fa-usd pull-left" style="padding-right: 20px;"></i>
+            <h4>Fees</h4>
+          </div>
+        </div>
+        <div class="panel-body" style="padding:0;">
+          <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Rate</th>
+                <th>Hours</th>
+                <th>Charge</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @user.fees.each do |fee| %>
+                <% add_to_fees_total(fee.charge) %>
+                <tr>
+                <td><%= fee.date.strftime("%m/%d/%Y") %></td>
+                <td><%= fee.rate %></td>
+                <td><%= fee.hours %></td>
+                <td>$<%= ActiveSupport::NumberHelper::number_to_currency(fee.charge,{precision: 2,unit: ''}) %></td>
+                <td>$<%= ActiveSupport::NumberHelper::number_to_currency(@fees_total,{precision: 2,unit: ''}) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div><!-- panel body -->
+      </div><!-- panel default -->
+    </div><!-- col-md-6-->
+  </div><!-- row -->
+  <div class="row">

@@ -75,7 +75,7 @@ hours = [2.5, 10, 8, 20, 5.5, 40, 12.25]
       corp = Corp.create!(user_id: user.id,
                           contact: contact,
                           email: contact_email,
-                          owners: owners,
+                          owners: user.name + " 100%",
                           office: office,
                           state: office.split(", ")[2],
                           company: companies[i],

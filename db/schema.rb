@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110124625) do
+ActiveRecord::Schema.define(version: 20170110184451) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20170110124625) do
   end
 
   create_table "expenses", force: :cascade do |t|
-    t.string   "date"
+    t.datetime "date"
     t.string   "vendor"
     t.decimal  "amount",     precision: 12, scale: 2
     t.datetime "created_at",                          null: false
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20170110124625) do
   end
 
   create_table "fees", force: :cascade do |t|
-    t.string   "date"
+    t.datetime "date"
     t.decimal  "rate",       precision: 12, scale: 2
     t.decimal  "hours",      precision: 5,  scale: 2
     t.decimal  "charge",     precision: 12, scale: 2
