@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
 before_action :logged_in_user, only: [:edit, :update, :destroy]
 before_action :correct_user,   only: [:edit, :update, :show]
+before_action :admin_only,   only: [:index]
 before_action :authorize
 
 def index
@@ -82,5 +83,11 @@ end
 def authorized?(user)
    current_user?(user)  || current_user.try(:admin?)
 end
+
+def admin_only
+  redirect_to(root_url) unless current_user.try(:admin?)
+
+end
+
 
 end

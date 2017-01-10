@@ -1,5 +1,7 @@
 class AttorneysController < ApplicationController
 
+  before_action :admin_only,   only: [:index]
+
 def index
     @attorneys = Attorney.all
 end
@@ -42,6 +44,10 @@ private
 
 def attorney_params
     params.require(:attorney).permit(:name, :address, :email, :phone, :license, :states, :practice)
+end
+
+def admin_only
+  redirect_to(root_url) unless current_user.try(:admin?)
 end
 
 end
