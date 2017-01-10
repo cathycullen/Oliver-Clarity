@@ -40,7 +40,7 @@ Todo.delete_all
     email = name.downcase.gsub!(/ /, '.')+"@gmail.com"
     password = "password"
     #puts "user #{name} email #{email}"
-    user = User.create!(name: name, email: email, password: password, password_confirmation: password, role: 'user')
+    user = User.create!(name: name, email: email, activated: true, password: password, password_confirmation: password, role: 'user')
     budget = Budget.create!(annual_amount: rand(100000..1000000), user_id: user.id)
     atty = atty_arr.sample
     UsersAttorney.create!(user_id: user.id, attorney_id: atty.id)
@@ -49,7 +49,50 @@ Todo.delete_all
     todo = Todo.create!(item: 'ToDo 3', user_id: user.id)
 end
 
-User.all.each do |user|
-  user.activated = true
-  user.save
+addresses = []
+addresses << " PO BOX 101, Culver City, CA, 90230"
+addresses << " PO BOX 102, Boston, MA, 01850"
+addresses << " PO BOX 103, New York, NY, 10006"
+addresses << " PO BOX 104, Chicago, IL, 60640"
+companies = ["ABC Corp", "TestCo LLC", "FCG Inc"]
+businesses = ["Marketing", "Technology", "Consulting", "Legal", "Retail", "Food Services", "Beverages"]
+eins = ["38-3679495", "38-3689977", "38-3779853"]
+colors = ["red", "black", "blue"]
+registrations = ["2,773,556", "2,943,671", "2,897,057"]
+3.times do |i|
+  contact = Faker::Name.first_name + " " + Faker::Name.last_name
+  contact_email = contact.downcase.gsub!(/ /, '.')+"@gmail.com"
+  owners = Faker::Name.first_name + " " + Faker::Name.last_name
+  office = addresses.sample
+  business = businesses.sample
+  corp = Corp.create!(user_id: user.id,
+                      contact: contact,
+                      email: contact_email,
+                      owners: owners,
+                      office: office,
+                      state: office.split(", ")[2],
+                      company: companies[i],
+                      business: business,
+                      regagent: atty_arr.sample.name,
+                      regoffice: "Reg Office",
+                      incorporation: companies[i].split(" ")[1],
+                      ein: eins[i],
+                      next: Date.today+(100*rand())
+                      )
+    mark = Mark.create!(user_id: user.id,
+                        contact: contact,
+                        email: contact_email,
+                        owner: user.name,
+                        entity: "entity",
+                        address: corp.office,
+                        description: "This trademark describes...",
+                        colors: colors.sample,
+                        anywhere: "yes",
+                        commerce: "commerce",
+                        products: business,
+                        serial: "123456",
+                        registration: registrations.sample,
+                        next: Date.today+(100*rand()),
+                        deadline: Date.today+(100*rand()),
+    )
 end

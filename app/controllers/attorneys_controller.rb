@@ -1,77 +1,47 @@
 class AttorneysController < ApplicationController
-  before_action :set_attorney, only: [:show, :edit, :update, :destroy]
 
-  before_action :authorize
-
-  # GET /attorneys
-  # GET /attorneys.json
-  def index
+def index
     @attorneys = Attorney.all
-  end
+end
 
-  # GET /attorneys/1
-  # GET /attorneys/1.json
-  def show
-    @user = Attorney.find(params[:id])
-  end
-
-  # GET /attorneys/new
-  def new
+def new
     @attorney = Attorney.new
-  end
+end
 
-  # GET /attorneys/1/edit
-  def edit
-  end
+# GET /attorneys/1/edit
+def edit
+end
 
-  # POST /attorneys
-  # POST /attorneys.json
-  def create
+def create
     @attorney = Attorney.new(attorney_params)
-
-    respond_to do |format|
-      if @attorney.save
-        format.html { redirect_to @attorney, notice: 'Attorney was successfully created.' }
-        format.json { render :show, status: :created, location: @attorney }
-      else
-        format.html { render :new }
-        format.json { render json: @attorney.errors, status: :unprocessable_entity }
-      end
+    if @attorney.save
+        flash[:success] = "New attorney added"
+        render 'index'
+    else
+        render 'new'
     end
-  end
+end
 
-  # PATCH/PUT /attorneys/1
-  # PATCH/PUT /attorneys/1.json
-  def update
-    respond_to do |format|
-      if @attorney.update(attorney_params)
-        format.html { redirect_to @attorney, notice: 'Attorney was successfully updated.' }
-        format.json { render :show, status: :ok, location: @attorney }
-      else
-        format.html { render :edit }
-        format.json { render json: @attorney.errors, status: :unprocessable_entity }
-      end
+def update
+    @attorney = Attorney.find(params[:id])
+    if @attorney.update(post_params)
+        redirect_to @attorney
+    else
+        render :edit
     end
-  end
+end
 
-  # DELETE /attorneys/1
-  # DELETE /attorneys/1.json
-  def destroy
-    @attorney.destroy
-    respond_to do |format|
-      format.html { redirect_to attorneys_url, notice: 'Attorney was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+def show
+    @attorney = Attorney.find(params[:id])
+end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_attorney
-      @attorney = Attorney.find(params[:id])
-    end
+def destroy
+end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def attorney_params
-      params.require(:attorney).permit(:name, :address, :email, :phone, :license, :states, :practice)
-    end
+private
+
+def attorney_params
+    params.require(:attorney).permit(:name, :address, :email, :phone, :license, :states, :practice)
+end
+
 end

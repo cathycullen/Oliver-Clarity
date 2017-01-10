@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109012136) do
+ActiveRecord::Schema.define(version: 20170109202722) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170109012136) do
     t.string   "business"
     t.string   "regagent"
     t.string   "regoffice"
-    t.string   "incorporation"
+    t.datetime "incorporation"
     t.string   "ein"
     t.datetime "next"
     t.datetime "created_at",    null: false
@@ -94,11 +94,10 @@ ActiveRecord::Schema.define(version: 20170109012136) do
     t.string   "anywhere"
     t.string   "commerce"
     t.string   "products"
-    t.string   "aural"
     t.string   "serial"
     t.string   "registration"
     t.datetime "next"
-    t.string   "deadline"
+    t.datetime "deadline"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "user_id"

@@ -10,7 +10,7 @@ class User < ApplicationRecord
     has_many :assignments
     has_many :roles, through: :assignments
 
-    has_many :budgets, dependent: :destroy, dependent: :destroy
+    has_many :budgets, dependent: :destroy
     has_many :todos, dependent: :destroy
     has_many :users_attorney
     has_many :attorneys, through: :users_attorney, dependent: :destroy
