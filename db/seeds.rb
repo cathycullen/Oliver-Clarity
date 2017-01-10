@@ -11,7 +11,7 @@
 User.delete_all
 User.create!(name: "Seed User", email: "seeduser@oliverclarity.com", password: "foobar", password_confirmation: "foobar", role: 'admin')
 
-user = User.create!(name: 'Tripp Fried', email: 'trippe@sourcedgeneralcounsel.com', password: 'trippefried', password_confirmation: 'trippefried', role: 'admin')
+user = User.create!(name: 'Trippe Fried', email: 'trippe@sourcedgeneralcounsel.com', password: 'trippefried', password_confirmation: 'trippefried', role: 'admin')
 user = User.create!(name: 'cathy cullen', email: 'cathy@softwareoptions.com', password: 'cullen11', password_confirmation: 'cullen11', role: 'admin')
 
 states = ['IL', 'NY', 'CA', 'MA', 'FL', 'TX', 'NJ', 'PA', 'CT', 'WA', 'NV', 'DE']
