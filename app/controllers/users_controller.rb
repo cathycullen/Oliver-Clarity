@@ -11,13 +11,6 @@ end
 
 def show
   @user = User.find(params[:id])
-  if @budget = Budget.where(:user_id => @user.id).first
-    @annual_budget = @budget.annual_amount
-    @spend_this_month = @budget.spend_this_month
-    @spend_this_year = @budget.spend_this_year
-    @remaining = @budget.remaining
-  end
-  @todos = Todo.where(:user_id => @user.id)
   @fees_total = 0
   @expenses_total = 0
 end

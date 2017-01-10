@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="panel-body text-center price-headline">
-        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@annual_budget,{precision: 0,unit: ''})%></h4>
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@user.budgets.first.annual_amount,{precision: 0,unit: ''})%></h4>
       </div>
     </div><!-- panel default -->
   </div><!-- col-sm-3 -->
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="panel-body text-center price-headline">
-        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@spend_this_month,{precision: 0,unit: ''})%></h4>
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@user.budgets.first.spend_this_month,{precision: 0,unit: ''})%></h4>
       </div>
     </div><!-- panel default -->
   </div><!-- col-sm-3 -->
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="panel-body text-center price-headline">
-        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@spend_this_year,{precision: 0,unit: ''})%></h4>
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@user.budgets.first.spend_this_year,{precision: 0,unit: ''})%></h4>
       </div>
     </div><!-- panel default -->
   </div><!-- col-sm-3 -->
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="panel-body text-center price-headline">
-        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@remaining,{precision: 0,unit: ''})%></h4>
+        <h4>$<%= ActiveSupport::NumberHelper::number_to_currency(@user.budgets.first.remaining,{precision: 0,unit: ''})%></h4>
       </div>
     </div><!-- panel default -->
   </div><!-- col-sm-3 -->
@@ -105,7 +105,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @todos.each do |task| %>
+            <% @user.todos.each do |task| %>
               <tr>
                 <td><%= task.item %></td>
               </tr>
