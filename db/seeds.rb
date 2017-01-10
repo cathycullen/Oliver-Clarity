@@ -39,20 +39,6 @@ Corp.delete_all
 Expense.delete_all
 Fee.delete_all
 
-10.times do |n|
-    name = Faker::Name.first_name + " " + Faker::Name.last_name
-    email = name.downcase.gsub!(/ /, '.').gsub("'", '')+"@gmail.com"
-    password = "password"
-    puts "create user #{name} email #{email}"
-    user = User.create!(name: name, email: email, activated: true, password: password, password_confirmation: password, role: 'user')
-    budget = Budget.create!(annual_amount: rand(100000..1000000), user_id: user.id)
-    atty = atty_arr.sample
-    UsersAttorney.create!(user_id: user.id, attorney_id: atty.id)
-    todo = Todo.create!(item: 'ToDo 1', user_id: user.id)
-    todo = Todo.create!(item: 'ToDo 2', user_id: user.id)
-    todo = Todo.create!(item: 'ToDo 3', user_id: user.id)
-end
-
 addresses = []
 addresses << " PO BOX 101, Culver City, CA, 90230"
 addresses << " PO BOX 102, Boston, MA, 01850"
@@ -66,55 +52,71 @@ registrations = ["2,773,556", "2,943,671", "2,897,057"]
 rates = [150.0, 450.0, 250.0, 600.0, 125.0]
 hours = [2.5, 10, 8, 20, 5.5, 40, 12.25]
 
-3.times do |i|
-  contact = Faker::Name.first_name + " " + Faker::Name.last_name
-  contact_email = contact.downcase.gsub!(/ /, '.')+"@gmail.com"
-  owners = Faker::Name.first_name + " " + Faker::Name.last_name
-  office = addresses.sample
-  business = businesses.sample
-  corp = Corp.create!(user_id: user.id,
-                      contact: contact,
-                      email: contact_email,
-                      owners: owners,
-                      office: office,
-                      state: office.split(", ")[2],
-                      company: companies[i],
-                      business: business,
-                      regagent: atty_arr.sample.name,
-                      regoffice: "Reg Office",
-                      incorporation: companies[i].split(" ")[1],
-                      ein: eins[i],
-                      next: Date.today+(100*rand())
-                      )
-    mark = Mark.create!(user_id: user.id,
-                        contact: contact,
-                        email: contact_email,
-                        owner: user.name,
-                        entity: "entity",
-                        address: corp.office,
-                        description: "This trademark describes...",
-                        colors: colors.sample,
-                        anywhere: "yes",
-                        commerce: "commerce",
-                        products: business,
-                        serial: "123456",
-                        registration: registrations.sample,
-                        next: Date.today+(100*rand()),
-                        deadline: Date.today+(100*rand()),
-    )
+10.times do |n|
+    name = Faker::Name.first_name + " " + Faker::Name.last_name
+    email = name.downcase.gsub!(/ /, '.').gsub("'", '')+"@gmail.com"
+    password = "password"
+    puts "create user #{name} email #{email}"
+    user = User.create!(name: name, email: email, activated: true, password: password, password_confirmation: password, role: 'user')
+    budget = Budget.create!(annual_amount: rand(100000..1000000), user_id: user.id)
+    atty = atty_arr.sample
+    UsersAttorney.create!(user_id: user.id, attorney_id: atty.id)
+    todo = Todo.create!(item: 'ToDo 1', user_id: user.id)
+    todo = Todo.create!(item: 'ToDo 2', user_id: user.id)
+    todo = Todo.create!(item: 'ToDo 3', user_id: user.id)
 
-    expense = Expense.create!(user_id: user.id,
-                              date: Date.today-(500*rand()),
-                              vendor: "vendor name",
-                              amount: (rand() * 3000).round(2)
-    )
-    rate = rates.sample
-    how_long = hours.sample
-    charge = rate * how_long
-    fee = Fee.create!(user_id: user.id,
-                      date: Date.today-(500*rand()),
-                      rate: rate,
-                      hours: how_long,
-                      charge: charge
-    )
+
+    3.times do |i|
+      contact = Faker::Name.first_name + " " + Faker::Name.last_name
+      contact_email = contact.downcase.gsub!(/ /, '.')+"@gmail.com"
+      owners = Faker::Name.first_name + " " + Faker::Name.last_name
+      office = addresses.sample
+      business = businesses.sample
+      corp = Corp.create!(user_id: user.id,
+                          contact: contact,
+                          email: contact_email,
+                          owners: owners,
+                          office: office,
+                          state: office.split(", ")[2],
+                          company: companies[i],
+                          business: business,
+                          regagent: atty_arr.sample.name,
+                          regoffice: "Reg Office",
+                          incorporation: companies[i].split(" ")[1],
+                          ein: eins[i],
+                          next: Date.today+(100*rand())
+                          )
+        mark = Mark.create!(user_id: user.id,
+                            contact: contact,
+                            email: contact_email,
+                            owner: user.name,
+                            entity: "entity",
+                            address: corp.office,
+                            description: "This trademark describes...",
+                            colors: colors.sample,
+                            anywhere: "yes",
+                            commerce: "commerce",
+                            products: business,
+                            serial: "123456",
+                            registration: registrations.sample,
+                            next: Date.today+(100*rand()),
+                            deadline: Date.today+(100*rand()),
+        )
+
+        expense = Expense.create!(user_id: user.id,
+                                  date: Date.today-(500*rand()),
+                                  vendor: "vendor name",
+                                  amount: (rand() * 3000).round(2)
+        )
+        rate = rates.sample
+        how_long = hours.sample
+        charge = rate * how_long
+        fee = Fee.create!(user_id: user.id,
+                          date: Date.today-(500*rand()),
+                          rate: rate,
+                          hours: how_long,
+                          charge: charge
+        )
+    end
+
 end
