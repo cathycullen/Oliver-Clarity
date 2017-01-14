@@ -28,7 +28,7 @@ def create
     else
       redirect_to '/signup'
     end
-  end
+end
 
 def create_old
   @user = User.new(user_params)
