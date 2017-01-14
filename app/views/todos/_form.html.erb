@@ -1,14 +1,15 @@
 
 
 <div class="row-fluid col-md-6 clearfix">
+  <h3><%= @user.name %></h3>
   <div class="span4 well">
-    <%= simple_form_for @user do |f| %>
-      <% if @user.errors.any? %>
+    <%= simple_form_for @todo do |f| %>
+      <% if @todo.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
 
           <ul>
-          <% @user.errors.full_messages.each do |msg| %>
+          <% @todo.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
           <% end %>
           </ul>
@@ -16,9 +17,9 @@
       <% end %>
     <fieldset >
       <legend><%= operation %> </legend>
-      <%= f.input :name %>
-      <%= f.input :email %>
+      <%= f.input :item %>
       <div class="actions">
+        <%= hidden_field_tag(:user_id, @user.id) %>
         <%= f.button :submit %>
       </div>
     </fieldset >

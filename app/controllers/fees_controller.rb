@@ -1,3 +1,4 @@
+require 'pry'
 class FeesController < ApplicationController
 
 def index
@@ -5,27 +6,31 @@ def index
 end
 
 def new
-    @fee = Fee.new
+  @fee = Fee.new
+  @user = User.find(params[:user_id])
 end
 
 def create
     @fee = Fee.new(fee_params)
+    @user = User.find(params[:user_id])
+    @fee.user = @user
     if @fee.save
         flash[:success] = "Fee recorded"
-        redirect_to user_path
+        redirect_to @user
     else
         render 'new'
     end
 end
 
 def edit
-    @fee = Fee.find(params[:id])
+  @fee = Fee.find(params[:id])
+  @user =   @fee.user
 end
 
 def update
     @fee = Fee.find(params[:id])
-    if fee.update(post_params)
-        redirect_to user_path
+    if @fee.update(fee_params)
+        redirect_to @fee.user
     else
         render :edit
     end
@@ -36,6 +41,10 @@ def show
 end
 
 def destroy
+  @fee = Fee.find(params[:id])
+  @user = @fee.user
+  @fee.destroy
+  redirect_to @user
 end
 
 private

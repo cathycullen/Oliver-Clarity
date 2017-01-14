@@ -1,10 +1,10 @@
-<div class="row-fluid col-md-6 clearfix">
+
+<div class="row-fluid col-md-6">
   <div class="span4 well">
     <%= simple_form_for @attorney do |f| %>
       <% if @attorney.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@attorney.errors.count, "error") %> prohibited this attorney from being saved:</h2>
-
           <ul>
           <% @attorney.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -19,10 +19,11 @@
       <%= f.input :email %>
       <%= f.input :phone %>
       <div class="actions">
-        <%= f.submit %>
+        <%= f.button :submit %>
       </div>
     </fieldset >
     <% end %>
+</div>
   </div>
 </div>
 </div>

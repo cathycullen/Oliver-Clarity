@@ -55,11 +55,23 @@ def update
   end
 end
 
+# def destroy
+#   User.find(params[:id]).destroy
+#   flash[:success] = "User deleted"
+#   redirect_to users_url
+# end
+
 def destroy
-  User.find(params[:id]).destroy
-  flash[:success] = "User deleted"
-  redirect_to users_url
-end
+  puts "params #{params}"
+    # @user = User.find(params[:id])
+    # @attorney = attorney.find(params[:id])
+    # @comment.destroy
+    #
+    # respond_to do |format|
+    #   format.html { redirect_to post_comments_path(@post) }
+    #   format.xml  { head :ok }
+    # end
+  end
 
 private
 
@@ -86,8 +98,6 @@ end
 
 def admin_only
   redirect_to(root_url) unless current_user.try(:admin?)
-
 end
-
 
 end

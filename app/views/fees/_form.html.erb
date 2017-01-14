@@ -1,39 +1,29 @@
-<%= form_for(fee) do |f| %>
-    <% if fee.errors.any? %>
-    <div id="error_explanation">
-        <h2><%= pluralize(fee.errors.count, "error") %> prohibited this entry from being saved:</h2>
-        
-        <ul>
-            <% fee.error.full_messages.each do |message| %>
-            <li><%= message %> </li>
-            <% end %>
-        </ul>
-    </div>
+<div class="row-fluid col-md-6 clearfix">
+  <div class="span4 well">
+
+    <%= simple_form_for [@user, @fee]  do |f| %>
+
+      <% if @fee.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@fee.errors.count, "error") %> prohibited this fee from being saved:</h2>
+          <ul>
+          <% @fee.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <fieldset >
+      <legend><%= operation %> Fee</legend>
+      <%= f.input :date %>
+      <%= f.input :rate %>
+      <%= f.input :hours %>
+      <%= f.input :charge %>
+      <div class="actions">
+        <%= f.button :submit %>
+      </div>
+    </fieldset >
     <% end %>
-    <br>
-    <br>
-    <fieldset>
-        <legend>New Attorney Charge</legend>
-            <div class="field">
-                <%= f.label :date %>
-                <br>
-                <%= f.date_select :date %>
-                <br>
-                <%= f.label :rate %>
-                <br>
-                <%= f.text_field :rate %>
-                <br>
-                <%= f.label :hours %>
-                <br>
-                <%= f.text_field :hours %>
-                <br>
-                <%= f.label :charge %>
-                <br>
-                <%= f.text_field :charge %>
-            </div>
-    </fieldset>
-    
-<div class="center">
-    <%= f.submit "Submit", class: "btn btn-sm" %>
-    <% end %>
+  </div>
+</div>
 </div>

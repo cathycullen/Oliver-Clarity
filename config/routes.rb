@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :users
-  resources :marks
-  resources :corps
+  resources :users do
+    resources :fees
+    resources :expenses
+    resources :marks
+    resources :corps
+  end
+
   resources :minutes
   resources :attorneys
   resources :webdocs
   resources :todos
   resources :account_activations, only: [:edit]
-  resources :expenses
-  resources :fees
+  resources :users_attorneys
 
   get 'sessions/new'
 

@@ -82,7 +82,7 @@ hours = [2.5, 10, 8, 20, 5.5, 40, 12.25]
                           business: business,
                           regagent: atty_arr.sample.name,
                           regoffice: "Reg Office",
-                          incorporation: companies[i].split(" ")[1],
+                          incorporation: Date.today-(500*rand()),
                           ein: eins[i],
                           next: Date.today+(100*rand())
                           )

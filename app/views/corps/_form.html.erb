@@ -1,88 +1,38 @@
-<%= form_for(corp) do |f| %>
-  <% if corp.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(corp.errors.count, "error") %> prohibited this entity from being saved:</h2>
+<div class="row-fluid col-md-6 clearfix">
+  <div class="span4 well">
 
-      <ul>
-      <% corp.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= simple_form_for [@user, @corp]  do |f| %>
+
+      <% if @corp.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@corp.errors.count, "error") %> prohibited this expense from being saved:</h2>
+          <ul>
+          <% @corp.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <br>
-  <br>
-  <fieldset>
-    <legend>Contact Information</legend>
-      <div class="field">
-          <%= f.label :contact_name %>
-          <br>
-          <%= f.text_field :contact, :placeholder => "Insert contact name" %>
-          <br>
-          <%= f.label :contact_email %>
-          <br>
-          <%= f.text_field :email, :placeholder => "Insert contact email" %>
+    <fieldset >
+      <legend><%= operation %> corp</legend>
+      <%= f.input :contact %>
+      <%= f.input :email %>
+      <%= f.input :entity %>
+      <%= f.input :owners %>
+      <%= f.input :office %>
+      <%= f.input :state %>
+      <%= f.input :company %>
+      <%= f.input :business %>
+      <%= f.input :regagent %>
+      <%= f.input :regoffice %>
+      <%= f.input :incorporation, as: :date, html5: true %>
+      <%= f.input :ein %>
+      <%= f.input :next, as: :date, html5: true %>
+      <div class="actions">
+        <%= f.button :submit %>
       </div>
-  </fieldset>
-  <br>
-  <br>
-  <fieldset>
-    <legend>Entity Information</legend>
-      <div class="field">
-          <%= f.label :entity_name %>
-          <br>
-          <%= f.text_field :entity, :placeholder => "Insert the entity's name" %>
-          <br>
-          <%= f.label :owners %>
-          <br>
-          <%= f.text_area :owners, :placeholder => "Insert the name and ownership interest of each owner" %>
-          <br>
-          <%= f.label :office_address %>
-          <br>
-          <%= f.text_area :office, rows: 5, cols: 30, :placeholder => "Insert the address of the principal place of business" %>
-          <br>
-          <%= f.label :state_of_formation %>
-          <br>
-          <%= f.text_field :state, :placeholder => "Insert the state in which the entity is to be created" %>
-          <br>
-          <%= f.label :products_and_services %>
-          <br>
-          <%= f.text_area :business, :placeholder => "What goods and services will the business offer?" %>
-          <br>
-          <%= f.label :registered_agent %>
-          <br>
-            <aside class="well">
-              <%= link_to "Click here to get a Registered Agent", '#' %>
-            </aside>
-          <%= f.text_field :regagent, :placeholder => "Insert the name of the registered agent" %>
-          <br>
-          <%= f.label :registered_office %>
-          <br>
-          <%= f.text_area :regoffice, rows: 5, cols: 30, :placeholder => "Insert the address of the registered office" %>
-      </div>
-  </fieldset>
-  <br>
-  <fieldset>
-    <legend>Filing Information</legend>
-      <p>We will provide this information upon registration of the entity.</p>
-      <br>
-      <div class="field">
-        <%= f.label :date_of_incorporation %>
-        <br>
-        <%= f.text_field :incorporation, :placeholder => "To be provided" %>
-        <br>
-        <%= f.label :employer_identification_number, :placeholder => "To be provided" %>
-        <br>
-        <%= f.text_field :ein, :placeholder => "To be provided" %>
-        <br>
-        <%= f.label :next_action %>
-        <br>
-        <%= f.text_field :next, :placeholder => "To be provided" %>
-      </div>  
-  </fieldset>
-  <br>
-  <br>
-<div class="center">
-    <%= f.submit "Submit", class: "btn btn-md" %>
+    </fieldset >
     <% end %>
+  </div>
+</div>
 </div>

@@ -1,3 +1,4 @@
+require 'pry'
 class AttorneysController < ApplicationController
 
   before_action :admin_only,   only: [:index]
@@ -12,6 +13,8 @@ end
 
 # GET /attorneys/1/edit
 def edit
+  puts "edit called on attorney controller params #{params}"
+  @attorney = Attorney.find(params[:id])
 end
 
 def create
@@ -38,6 +41,9 @@ def show
 end
 
 def destroy
+  puts "destroy called on attorney controller"
+
+  puts "params #{params}"
 end
 
 private
