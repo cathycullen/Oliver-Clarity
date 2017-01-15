@@ -1,4 +1,4 @@
-<div class="container user-container">
+<div class="container user-container  table-data">
 <div class="row user-header">
   <div class="col-sm-3 col-md-offset-3">
       <%= round_gravatar_for @user, size: 70 %></td>
@@ -68,11 +68,10 @@
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="panel-title">
+          <h3 class="panel-title">
             <i class="fa fa-legal pull-left" style="padding-right: 20px;"></i>
-            <h4>Lawyers</h4>
+            Lawyers</h3>
           </div>
-        </div>
         <div class="panel-body" style="padding:0;">
           <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
             <thead>
@@ -107,11 +106,10 @@
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="panel-title">
+          <h3 class="panel-title">
             <i class="fa fa-check pull-left" style="padding-right: 20px;"></i>
-            <h4>Todo</h4>
+            Todo</h3>
           </div>
-        </div>
         <div class="panel-body" style="padding:0;">
           <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
             <thead>
@@ -150,11 +148,10 @@
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="panel-title">
+          <h3 class="panel-title">
             <i class="fa fa-group pull-left" style="padding-right: 20px;"></i>
-            <h4>Companies</h4>
+            Companies</h3>
           </div>
-        </div>
         <div class="panel-body" style="padding:0;">
           <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
             <thead>
@@ -189,11 +186,10 @@
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <div class="panel-title">
-            <i class="fa fa-certificate pull-left" style="padding-right: 20px;"></i>
-            <h4>Trademarks</h4>
-          </div>
-        </div>
+            <h3 class="panel-title">
+              <i class="fa fa-certificate pull-left" style="padding-right: 20px;"></i>
+              Trademarks</h3>
+            </div>
         <div class="panel-body" style="padding:0;">
           <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
             <thead>
@@ -234,11 +230,10 @@
       <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <div class="panel-title">
+            <h3 class="panel-title">
               <i class="fa fa-usd pull-left" style="padding-right: 20px;"></i>
-              <h4>Expenses</h4>
+              Expenses</h3>
             </div>
-          </div>
           <div class="panel-body" style="padding:0;">
             <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
               <thead>
@@ -276,11 +271,10 @@
       <div class="col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <div class="panel-title">
+            <h3 class="panel-title">
               <i class="fa fa-usd pull-left" style="padding-right: 20px;"></i>
-              <h4>Fees</h4>
+              Fees</h3>
             </div>
-          </div>
           <div class="panel-body" style="padding:0;">
             <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
               <thead>
@@ -319,6 +313,6 @@
         </div><!-- panel default -->
       </div><!-- col-md-6-->
     </div><!-- row -->
-    <div class="row">
+
   <% end %>
 </div>

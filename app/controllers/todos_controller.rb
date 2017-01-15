@@ -29,6 +29,7 @@ def create
 
 def edit
     @todo = Todo.find(params[:id])
+    @user = @todo.user
 end
 
 

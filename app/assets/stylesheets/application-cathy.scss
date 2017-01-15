@@ -1,0 +1,33 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome";
+
+
+  .gold {
+     color: #f2b632;
+  }
+  .jumbo-h1 {
+    text-align: center;
+    font-size: 84px;
+  }
+  .jumbotron {
+    padding-bottom: 1px;
+  }
+  .jumbotron h1 {
+    font-size: 84px;
+  }
+  .subjumbo {
+    text-align: right;
+  }
+  .round-avatar {
+   -moz-border-radius: 50%;
+   -webkit-border-radius: 50%;
+   border-radius: 50%;
+ }
+ .user-header {
+   margin-bottom: 75px;
+ }
+ .user-container {
+   margin-bottom: 100px;
+ }
+ 
