@@ -24,7 +24,7 @@ def create
         flash[:success] = "Unable to save Todo"
     end
     redirect_to @user
-  end
+end
 
 
 def edit
