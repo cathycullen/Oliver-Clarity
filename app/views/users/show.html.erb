@@ -69,7 +69,11 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
-            <i class="fa fa-legal pull-left" style="padding-right: 20px;"></i>
+            <i class="fa fa-legal pull-left" style="padding-right: 20px; "></i>
+            <%= link_to new_attorney_path(@user), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+                <i class="glyphicon glyphicon-plus "></i>
+            <% end %>
+
             Lawyers</h3>
           </div>
         <div class="panel-body" style="padding:0;">
@@ -87,19 +91,17 @@
                   <td><%= attorney.name %></td>
                   <td><%= attorney.email %></td>
                   <td>
-                    <%= link_to "Edit", edit_users_attorney_path(@user, attorney) %>
-                    <%= link_to 'Delete', attorney_path(@user, attorney),
-                                data: {:confirm => 'Are you sure?'}, :method => :delete %>
+                    <%= link_to attorney, method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <% end %>
+                    <%= link_to edit_users_attorney_path(@user, attorney), class: "btn btn-outline-info btn-sm" do %>
+                      <span class="glyphicon  glyphicon-pencil"></span>
+                    <% end %>
                   </td>
-                </tr>
-                <tr>
                 </tr>
               <% end %>
             </tbody>
           </table>
-          <%= link_to new_attorney_path(@user), class: 'btn btn-xs btn-success' do %>
-              <i class="glyphicon glyphicon-plus"></i> New
-          <% end %>
         </div><!-- panel body -->
       </div><!-- panel default -->
     </div><!-- col -->
@@ -108,6 +110,9 @@
         <div class="panel-heading">
           <h3 class="panel-title">
             <i class="fa fa-check pull-left" style="padding-right: 20px;"></i>
+            <%= link_to new_todo_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+                <i class="glyphicon glyphicon-plus "></i>
+            <% end %>
             Todo</h3>
           </div>
         <div class="panel-body" style="padding:0;">
@@ -123,19 +128,18 @@
                 <tr>
                   <td><%= task.item %></td>
                   <td>
-                    <%= link_to "Edit", edit_todo_path(task) %>
-                    <%= link_to 'Delete', todo_path(task),
-                              data: {:confirm => 'Are you sure?'}, :method => :delete %>
-
+                    <%= link_to task, method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <% end %>
+                    <%= link_to edit_todo_path(task), class: "btn btn-outline-info btn-sm" do %>
+                      <span class="glyphicon  glyphicon-pencil"></span>
+                    <% end %>
                   </td>
                 </tr>
                 <tr></tr>
               <% end %>
             </tbody>
           </table>
-          <%= link_to new_todo_path(:user_id => @user.id), class: 'btn btn-xs btn-success' do %>
-              <i class="glyphicon glyphicon-plus"></i> New
-          <% end %>
         </div><!-- panel body -->
       </div><!-- panel default -->
     </div><!-- col-md-6-->
@@ -150,6 +154,9 @@
         <div class="panel-heading">
           <h3 class="panel-title">
             <i class="fa fa-group pull-left" style="padding-right: 20px;"></i>
+            <%= link_to new_user_corp_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+                <i class="glyphicon glyphicon-plus "></i>
+            <% end %>
             Companies</h3>
           </div>
         <div class="panel-body" style="padding:0;">
@@ -169,17 +176,17 @@
                   <td><%= corp.business %></td>
                   <td><%= corp.next.strftime("%m/%d/%Y") %></td>
                 <td>
-                  <%= link_to "Edit", edit_user_corp_path(@user, corp) %>
-                  <%= link_to 'Delete', user_corp_path(@user, corp),
-                            data: {:confirm => 'Are you sure?'}, :method => :delete %>
+                  <%= link_to user_corp_path(@user, corp), method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                  <% end %>
+                  <%= link_to edit_user_corp_path(@user, corp), class: "btn btn-outline-info btn-sm" do %>
+                    <span class="glyphicon  glyphicon-pencil"></span>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
-        <%= link_to new_user_corp_path(:user_id => @user.id), class: 'btn btn-xs btn-success' do %>
-            <i class="glyphicon glyphicon-plus"></i> New
-        <% end %>
         </div><!-- panel body -->
       </div><!-- panel default -->
     </div><!-- col -->
@@ -188,6 +195,9 @@
         <div class="panel-heading">
             <h3 class="panel-title">
               <i class="fa fa-certificate pull-left" style="padding-right: 20px;"></i>
+              <%= link_to new_user_mark_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+                  <i class="glyphicon glyphicon-plus "></i>
+              <% end %>
               Trademarks</h3>
             </div>
         <div class="panel-body" style="padding:0;">
@@ -209,17 +219,17 @@
                   <td><%= mark.registration %></td>
                   <td><%= mark.next.strftime("%m/%d/%Y") %></td>
                 <td>
-                  <%= link_to "Edit", edit_user_mark_path(@user, mark) %>
-                  <%= link_to 'Delete', user_mark_path(@user, mark),
-                            data: {:confirm => 'Are you sure?'}, :method => :delete %>
+                  <%= link_to user_mark_path(@user, mark), method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                  <% end %>
+                  <%= link_to edit_user_mark_path(@user, mark), class: "btn btn-outline-info btn-sm" do %>
+                    <span class="glyphicon  glyphicon-pencil"></span>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
-        <%= link_to new_user_mark_path(:user_id => @user.id), class: 'btn btn-xs btn-success' do %>
-            <i class="glyphicon glyphicon-plus"></i> New
-        <% end %>
         </div><!-- panel body -->
       </div><!-- panel default -->
     </div><!-- col-md-6-->
@@ -232,6 +242,9 @@
           <div class="panel-heading">
             <h3 class="panel-title">
               <i class="fa fa-usd pull-left" style="padding-right: 20px;"></i>
+              <%= link_to new_user_expense_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+                  <i class="glyphicon glyphicon-plus "></i>
+              <% end %>
               Expenses</h3>
             </div>
           <div class="panel-body" style="padding:0;">
@@ -254,17 +267,18 @@
                     <td>$<%= ActiveSupport::NumberHelper::number_to_currency(expense.amount,{precision: 2,unit: ''}) %></td>
                     <td>$<%= ActiveSupport::NumberHelper::number_to_currency(@expenses_total,{precision: 2,unit: ''}) %></td>
                     <td>
-                      <%= link_to "Edit", edit_user_expense_path(@user, expense) %>
-                      <%= link_to 'Delete', user_expense_path(@user, expense),
-                                data: {:confirm => 'Are you sure?'}, :method => :delete %>
+                      <%= link_to user_expense_path(@user, expense), method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                      <span class="glyphicon glyphicon-trash"></span>
+                      <% end %>
+                      <%= link_to edit_user_expense_path(@user, expense), class: "btn btn-outline-info btn-sm" do %>
+                        <span class="glyphicon  glyphicon-pencil"></span>
+                      <% end %>
+
                     </td>
                   </tr>
                 <% end %>
               </tbody>
             </table>
-            <%= link_to new_user_expense_path(:user_id => @user.id), class: 'btn btn-xs btn-success' do %>
-                <i class="glyphicon glyphicon-plus"></i> New
-            <% end %>
           </div><!-- panel body -->
         </div><!-- panel default -->
       </div><!-- col -->
@@ -273,6 +287,9 @@
           <div class="panel-heading">
             <h3 class="panel-title">
               <i class="fa fa-usd pull-left" style="padding-right: 20px;"></i>
+              <%= link_to new_user_fee_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+                  <i class="glyphicon glyphicon-plus "></i>
+              <% end %>
               Fees</h3>
             </div>
           <div class="panel-body" style="padding:0;">
@@ -301,14 +318,18 @@
                     <%= link_to 'Delete', user_fee_path(@user, fee),
                               data: {:confirm => 'Are you sure?'}, :method => :delete %>
 
+                    <%= link_to user_fee_path(@user, fee),  method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <% end %>
+                    <%= link_to edit_user_fee_path(@user, fee), class: "btn btn-outline-info btn-sm" do %>
+                      <span class="glyphicon  glyphicon-pencil"></span>
+                    <% end %>
+
                   </td>
                   </tr>
                 <% end %>
               </tbody>
             </table>
-            <%= link_to new_user_fee_path(:user_id => @user.id), class: 'btn btn-xs btn-success' do %>
-                <i class="glyphicon glyphicon-plus"></i> New
-            <% end %>
           </div><!-- panel body -->
         </div><!-- panel default -->
       </div><!-- col-md-6-->
