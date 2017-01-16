@@ -63,7 +63,9 @@ end
 
 def destroy
   puts "params #{params}"
-    # @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to @user
     # @attorney = attorney.find(params[:id])
     # @comment.destroy
     #

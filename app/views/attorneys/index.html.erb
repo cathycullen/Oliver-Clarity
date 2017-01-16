@@ -21,14 +21,16 @@
         <td><%= attorney.email %></td>
         <td><%= attorney.phone %></td>
         <td>
-          <%= link_to attorney, class: "btn btn-default btn-sm" do %>
+          <%= link_to attorney, method: :delete, remote: true, data:{confirm: "Delete?"}, class: "btn btn-sm btn-danger" do %>
+          <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+          <%= link_to attorney, class: "btn btn-success btn-sm" do %>
             <span class="glyphicon glyphicon-eye-open"></span>
           <% end %>
-          <%= link_to edit_attorney_path(attorney), class: "btn btn-default btn-sm" do %>
+          <%= link_to edit_attorney_path(attorney), class: "btn btn-info btn-sm" do %>
             <span class="glyphicon  glyphicon-pencil"></span>
           <% end %>
-          <%= link_to 'Delete', attorney, method: :delete, data: { confirm: 'Are you sure?' },
-              class: "btn btn-default  btn-sm" %>
+
         </td>
       </tr>
     <% end %>
