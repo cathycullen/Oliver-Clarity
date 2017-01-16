@@ -495,7 +495,11 @@ sub, sup {
   background-color: #fff;
 }
 
-
+.round-avatar {
+ -moz-border-radius: 50%;
+ -webkit-border-radius: 50%;
+ border-radius: 50%;
+}
 
 .box > .icon { text-align: center; position: relative; }
 .box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #f2b632; vertical-align: middle; }
