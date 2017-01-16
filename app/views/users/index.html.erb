@@ -1,44 +1,45 @@
+<h1 class="jumbo-h3"><span class="gold">O</span>liver<span class="gold">C</span>larity</h1>
 
 <div class="panel panel-default table-data">
   <div class="panel-heading">
-      <h3 class="panel-title">Users</h3>
-  </div>
-<table class="table table-striped table-bordered table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Role</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-          <td><%= link_to user.name, user %></td>
-        <td><%= user.email %></td>
-        <td><%= user.role %></td>
-        <td>
-          <%= link_to user, method: :delete, remote: true, data:{confirm: "Delete this user?"}, class: "btn btn-sm btn-danger" do %>
-          <span class="glyphicon glyphicon-trash"></span>
-          <% end %>
-          <%= link_to user, class: "btn btn-success btn-sm" do %>
-            <span class="glyphicon glyphicon-eye-open"></span>
-          <% end %>
-          <%= link_to edit_user_path(user), class: "btn btn-info btn-sm" do %>
-            <span class="glyphicon  glyphicon-pencil"></span>
-          <% end %>
-        </td>
-      </tr>
+    <h3 class="panel-title">
+    <i class="fa fa-user pull-left" style="padding-right: 20px;"></i>
+    <%= link_to new_user_path, class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+        <i class="glyphicon glyphicon-plus "></i>
     <% end %>
-  </tbody>
-</table>
-<br>
-</div>
+    Users</h3>
+  </div>
 
-<%= link_to new_user_path, class: 'btn btn-success' do %>
-    <i class="glyphicon glyphicon-plus"></i> New User
-<% end %>
+  <table class="table table-striped table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
 
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+            <td><%= link_to user.name, user %></td>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td>
+            <%= link_to user, method: :delete, remote: true, data:{confirm: "Delete this user?"}, class: "btn btn-sm btn-danger" do %>
+            <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+            <%= link_to user, class: "btn btn-success btn-sm" do %>
+              <span class="glyphicon glyphicon-eye-open"></span>
+            <% end %>
+            <%= link_to edit_user_path(user), class: "btn btn-info btn-sm" do %>
+              <span class="glyphicon  glyphicon-pencil"></span>
+            <% end %>
+
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

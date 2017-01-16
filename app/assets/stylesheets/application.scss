@@ -322,6 +322,10 @@ h2, h3, h4, h5, h6 {
 .jumbo-h2 {
   font-size: 3em;
 }
+.jumbo-h3 {
+  font-size: 65px;
+  margin-bottom: 50px;
+}
 .user-header {
   margin-bottom: 75px;
 }
@@ -456,11 +460,9 @@ sub, sup {
   position: relative;
   left: calc(-50vw + 50%);
   text-align: center;
-
-  h1 {
-    font-size: 56px;
-    margin-bottom: 30px;
-  }
+body {
+  color: black;
+}
   p {
     font-size: 17px;
     font-family: Lato, sans-serif;
