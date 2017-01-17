@@ -1,0 +1,35 @@
+<div class="center jumbotron">
+    <h2>Meeting Minutes</h2>
+    <h4>Information about Meetings and Minutes Generator</h4>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">What are meeting minutes?</div>
+            <div class="panel-body">A corporation, LLC, or other entity acts through designated individuals. Key decisions are made
+            at meetings by voting on resolutions. A sufficient number of votes means that the resolution passes. Each time a meeting is
+            held and a vote is taken should be documented in meeting minutes.</div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">How is a meeting called?</div>
+            <div class="panel-body">A meeting is called by issuing notice to each individual entitled to vote (i.e. each shareholder
+            or member). The process for notifying shareholder or members of a meeting is set forth in the bylaws or operating
+            agreement. You may also hold a meeting by consent of all entitled to participate.</div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">When should a meeting be called?</div>
+            <div class="panel-body">Each corporation or limited liability company - even if it only has one shareholder or member - is
+            required to have an annual meeting. As a general rule, any time an entity is taking an action outside of its usual course
+            of business a special meeting should be called. Shareholders and members may also act by written consent without a meeting
+            by signing a document indicating approval of a resolution.</div>
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">Form Instructions</div>
+          <div class="panel-body">Please complete this form in full. If you have any questions, do not hesitate to contact us.</div>
+  </div>
+</div>
+
+<%= render 'form', minute: @minute %>

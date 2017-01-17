@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     resources :marks
     resources :corps
     resources :webdocs
+    resources :minutes
   end
 
-  resources :minutes
   resources :attorneys
   resources :todos
   resources :account_activations, only: [:edit]

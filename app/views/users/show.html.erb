@@ -308,12 +308,7 @@
                   <td><%= fee.hours %></td>
                   <td>$<%= ActiveSupport::NumberHelper::number_to_currency(fee.charge,{precision: 2,unit: ''}) %></td>
                   <td>$<%= ActiveSupport::NumberHelper::number_to_currency(@fees_total,{precision: 2,unit: ''}) %></td>
-                  <td>
-                    <%= link_to "Edit", edit_user_fee_path(@user, fee) %>
-                    <%= link_to 'Delete', user_fee_path(@user, fee),
-                              data: {:confirm => 'Are you sure?'}, :method => :delete %>
-
-                    <%= link_to user_fee_path(@user, fee),  method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                  <td>    <%= link_to user_fee_path(@user, fee),  method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
                     <span class="glyphicon glyphicon-trash"></span>
                     <% end %>
                     <%= link_to edit_user_fee_path(@user, fee), class: "btn btn-outline-info btn-sm" do %>
@@ -381,41 +376,31 @@
             <div class="panel-heading">
               <h3 class="panel-title">
                 <i class="fa fa-usd pull-left" style="padding-right: 20px;"></i>
-                <%= link_to new_user_fee_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
+                <%= link_to new_user_minute_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
                     <i class="glyphicon glyphicon-plus "></i>
                 <% end %>
-                Fees</h3>
+                Minutes</h3>
               </div>
             <div class="panel-body" style="padding:0;">
               <table class="table table-condensed table-bordered table-striped table-hover table-responsive" >
                 <thead>
                   <tr>
                     <th>Date</th>
-                    <th>Rate</th>
-                    <th>Hours</th>
-                    <th>Charge</th>
-                    <th>Total</th>
+                    <th>Company</th>
+                    <th>Kind</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <% @user.fees.each do |fee| %>
-                    <% add_to_fees_total(fee.charge) %>
+                  <% @user.minutes.each do |minutes| %>
                     <tr>
-                    <td><%= fee.date.strftime("%m/%d/%Y") %></td>
-                    <td><%= fee.rate %></td>
-                    <td><%= fee.hours %></td>
-                    <td>$<%= ActiveSupport::NumberHelper::number_to_currency(fee.charge,{precision: 2,unit: ''}) %></td>
-                    <td>$<%= ActiveSupport::NumberHelper::number_to_currency(@fees_total,{precision: 2,unit: ''}) %></td>
-                    <td>
-                      <%= link_to "Edit", edit_user_fee_path(@user, fee) %>
-                      <%= link_to 'Delete', user_fee_path(@user, fee),
-                                data: {:confirm => 'Are you sure?'}, :method => :delete %>
-
-                      <%= link_to user_fee_path(@user, fee),  method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
+                    <td><%= minutes.date %></td>
+                    <td><%= minutes.company %></td>
+                    <td><%= minutes.kind %></td>
+                    <td>      <%= link_to user_minute_path(@user, minutes),  method: :delete, remote: true, data:{confirm: "Are you sure?"}, class: "btn btn-sm btn-outline-danger" do %>
                       <span class="glyphicon glyphicon-trash"></span>
                       <% end %>
-                      <%= link_to edit_user_fee_path(@user, fee), class: "btn btn-outline-info btn-sm" do %>
+                      <%= link_to edit_user_minute_path(@user, minutes), class: "btn btn-outline-info btn-sm" do %>
                         <span class="glyphicon  glyphicon-pencil"></span>
                       <% end %>
                     </td>

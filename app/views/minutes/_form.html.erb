@@ -1,75 +1,35 @@
-<%= form_for(minute) do |f| %>
-    <% if minute.errors.any? %>
+<div class="row-fluid col-md-6 clearfix">
+  <div class="span4 well">
+
+    <%= simple_form_for [@user, @minute]  do |f| %>
+
+      <% if @minute.errors.any? %>
         <div id="error_explanation">
-            <h2><%= pluralize(minute.errors.count, "error") %> prohibited these minutes from being saved:</h2>
-             <ul>
-              <% minute.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                  <% end %>
-             </ul>
+          <h2><%= pluralize(@minute.errors.count, "error") %> prohibited this minute from being saved:</h2>
+          <ul>
+          <% @minute.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
         </div>
-    <% end %>
-<br>
-<br>
-<fieldset>
-    <legend>Contact Information</legend>
-     <div class="field">
-          <%= f.label :contact_name %>
-          <br>
-          <%= f.text_field :name, :placeholder => "Insert contact name" %>
-          <br>
-          <%= f.label :contact_email %>
-          <br>
-          <%= f.text_field :email, :placeholder => "Insert contact email" %>
+      <% end %>
+    <fieldset >
+      <legend><%= operation %> Minutes</legend>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :company %>
+      <%= f.input :date %>
+      <%= f.input :kind %>
+      <%= f.input :attendees %>
+      <%= f.input :notice %>
+      <%= f.input :vote %>
+      <%= f.input :resolutions %>
+      <%= f.input :additional %>
+      <div class="actions">
+        <%= f.button :submit %>
       </div>
-</fieldset>
-<br>
-<br>
-<fieldset>
-    <legend>Meeting Information</legend>
-        <div class="field">
-            <%= f.label :company_name %>
-            <br>
-            <%= f.text_field :company, :placeholder => "Insert company name" %>
-            <br>
-            <%= f.label :meeting_date %>
-            <br>
-            <%= f.date_select :date %>
-            <br>
-            <%= f.label :annual_or_special_meeting? %>
-            <br>
-            <%= f.text_field :kind, :placeholder => "Insert Annual or Special" %>
-            <br>
-            <%= f.label :who_was_meeting? %>
-            <br>
-            <%= f.text_field :attendees, :placeholder => "e.g. Shareholders, Directors, Members" %>
-            <br>
-            <%= f.label :was_notice_issed? %>
-            <br>
-            <%= f.text_field :notice, :placeholder => "Yes or No" %>
-            <br> 
-            <%= f.label :what_was_the_required_vote_to_pass_a_resolution? %>
-            <br>
-            <%= f.text_field :vote, :placeholder => "Majority, Supermajority, or Unanimous" %>
-        </div>
-</fieldset>
-<br>
-<br>
-<fieldset>
-    <legend>Resolution & Notes</legend>
-        <div class="field">
-            <%= f.label :list_resolutions %>
-            <br>
-            <%= f.text_area :resolutions, rows: 5, cols: 30 %>
-            <br>
-            <%= f.label :other_notes %>
-            <br>
-            <%= f.text_area :additional, rows: 5, cols: 30 %> 
-        </div>
-</fieldset>
-<br>
-<br>
-<div class="center">
-    <%= f.submit "Submit", class: "btn btn-md" %>
+    </fieldset >
     <% end %>
+  </div>
+</div>
 </div>
