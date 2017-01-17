@@ -14,19 +14,19 @@
         </div>
       <% end %>
     <fieldset >
-      <legend><%= operation %> corp</legend>
-      <%= f.input :contact %>
-      <%= f.input :email %>
-      <%= f.input :entity %>
-      <%= f.input :owners %>
-      <%= f.input :office %>
-      <%= f.input :state %>
-      <%= f.input :company %>
-      <%= f.input :business %>
-      <%= f.input :regagent %>
-      <%= f.input :regoffice %>
+      <legend><h3>Create a New Entity</h3></legend>
+      <%= f.input :contact, :placeholder => "Contact Name" %>
+      <%= f.input :email, :placeholder => "Contact Email" %>
+      <%= f.input :entity, :placeholder => "Entity Type (corp, LLC, etc.)" %>
+      <%= f.input :owners, :placeholder => "Owners' Names and Interests" %>
+      <%= f.input :office, :placeholder => "Principal Office Address" %>
+      <%= f.input :state, :placeholder => "Preferred State of Incorporation" %>
+      <%= f.input :company, :placeholder => "Company Name" %>
+      <%= f.input :business, :placeholder => "Goods or Services Sold" %>
+      <%= f.input :regagent, :placeholder => "Registered Agent's Name" %>
+      <%= f.input :regoffice, :placeholder => "Registered Office Address" %>
       <%= f.input :incorporation, as: :date, html5: true %>
-      <%= f.input :ein %>
+      <%= f.input :ein, :placeholder => "Federal EIN, if known" %>
       <%= f.input :next, as: :date, html5: true %>
       <div class="actions">
         <%= f.button :submit %>
