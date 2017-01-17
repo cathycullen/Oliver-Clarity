@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -13,6 +14,12 @@ User.create!(name: "Seed User", email: "seeduser@oliverclarity.com", activated: 
 
 user = User.create!(name: 'Trippe Fried', email: 'trippe@sourcedgeneralcounsel.com', activated: true, password: 'trippefried', password_confirmation: 'trippefried', role: 'admin')
 user = User.create!(name: 'cathy cullen', email: 'cathy@softwareoptions.com', activated: true, password: 'cullen11', password_confirmation: 'cullen11', role: 'admin')
+=======
+User.delete_all
+User.create!(name: "Seed User", email: "seeduser@oliverclarity.com", password: "foobar", password_confirmation: "foobar", role: 'admin')
+User.create!(name: 'Trippe Fried', email: 'trippe@sourcedgeneralcounsel.com', password: 'trippefried', password_confirmation: 'trippefried', role: 'admin')
+User.create!(name: 'cathy cullen', email: 'cathy@softwareoptions.com', password: 'cullen11', password_confirmation: 'cullen11', role: 'admin')
+>>>>>>> Stashed changes
 
 states = ['IL', 'NY', 'CA', 'MA', 'FL', 'TX', 'NJ', 'PA', 'CT', 'WA', 'NV', 'DE']
 atty_arr = []
@@ -39,6 +46,10 @@ Corp.delete_all
 Expense.delete_all
 Fee.delete_all
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 addresses = []
 addresses << " PO BOX 101, Culver City, CA, 90230"
 addresses << " PO BOX 102, Boston, MA, 01850"
@@ -75,14 +86,22 @@ hours = [2.5, 10, 8, 20, 5.5, 40, 12.25]
       corp = Corp.create!(user_id: user.id,
                           contact: contact,
                           email: contact_email,
+<<<<<<< Updated upstream
                           owners: user.name + " 100%",
+=======
+                          owners: owners,
+>>>>>>> Stashed changes
                           office: office,
                           state: office.split(", ")[2],
                           company: companies[i],
                           business: business,
                           regagent: atty_arr.sample.name,
                           regoffice: "Reg Office",
+<<<<<<< Updated upstream
                           incorporation: Date.today-(500*rand()),
+=======
+                          incorporation: companies[i].split(" ")[1],
+>>>>>>> Stashed changes
                           ein: eins[i],
                           next: Date.today+(100*rand())
                           )

@@ -5,11 +5,11 @@ Rails.application.routes.draw do
     resources :expenses
     resources :marks
     resources :corps
+    resources :webdocs
   end
 
   resources :minutes
   resources :attorneys
-  resources :webdocs
   resources :todos
   resources :account_activations, only: [:edit]
   resources :users_attorneys

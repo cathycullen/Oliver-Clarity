@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110184451) do
+ActiveRecord::Schema.define(version: 20170116170133) do
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -121,6 +121,12 @@ ActiveRecord::Schema.define(version: 20170110184451) do
     t.index ["user_id"], name: "index_minutes_on_user_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "todos", force: :cascade do |t|
     t.string   "item"
     t.string   "date"
@@ -154,17 +160,17 @@ ActiveRecord::Schema.define(version: 20170110184451) do
   end
 
   create_table "webdocs", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "owner"
     t.string   "url"
     t.string   "state"
-    t.string   "children"
+    t.boolean  "children",      default: false
     t.string   "products"
     t.string   "similar"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "user_id"
+    t.string   "filename"
+    t.string   "content_type"
+    t.binary   "file_contents"
     t.index ["user_id"], name: "index_webdocs_on_user_id"
   end
 
