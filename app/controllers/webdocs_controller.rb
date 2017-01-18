@@ -10,7 +10,6 @@ def create
     @webdoc = Webdoc.new(webdoc_params)
     @user = User.find(params[:user_id])
     @webdoc.user = @user
-
     if @webdoc.save
          flash[:success] = "Form submitted"
         redirect_to @user

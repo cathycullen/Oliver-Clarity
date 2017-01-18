@@ -17,11 +17,13 @@
     <fieldset >
       <legend><%= operation %> webdoc</legend>
         <%= f.input :url %>
-        <%= f.input :state %>
+        <%= f.input :state, collection: us_states %>
         <%= f.input :children %>
         <%= f.input :products %>
         <%= f.input :similar %>
-        <%= f.file_field :file %>
+        <%= f.file_field :file, label: "Upload a File" %>
+      
+
       <div class="actions">
         <%= f.button :submit %>
         <%= link_to 'Cancel', user_path(@user), class: "btn btn-lg btn-danger"%>

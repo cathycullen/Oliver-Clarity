@@ -30,8 +30,8 @@ end
 
 def update
     @attorney = Attorney.find(params[:id])
-    if @attorney.update(post_params)
-        redirect_to @attorney
+    if @attorney.update(attorney_params)
+        redirect_to attorneys_path
     else
         render :edit
     end

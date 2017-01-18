@@ -17,10 +17,10 @@
       <legend><h3>Create a New Entity</h3></legend>
       <%= f.input :contact, :placeholder => "Contact Name" %>
       <%= f.input :email, :placeholder => "Contact Email" %>
-      <%= f.input :entity, :placeholder => "Entity Type (corp, LLC, etc.)" %>
+      <%= f.input :entity, collection: Corp::ENTITY_TYPES, prompt: "Entity Type (corp, LLC, etc.)"  %>
       <%= f.input :owners, :placeholder => "Owners' Names and Interests" %>
       <%= f.input :office, :placeholder => "Principal Office Address" %>
-      <%= f.input :state, :placeholder => "Preferred State of Incorporation" %>
+      <%= f.input :state, prompt: "Preferred State of Incorporation", collection: us_states %>
       <%= f.input :company, :placeholder => "Company Name" %>
       <%= f.input :business, :placeholder => "Goods or Services Sold" %>
       <%= f.input :regagent, :placeholder => "Registered Agent's Name" %>

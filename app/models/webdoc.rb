@@ -11,6 +11,7 @@ class Webdoc < ApplicationRecord
         self.file_contents = file.read
       end
     end
+
     private
       def sanitize_filename(filename)
         # Get only the filename, not the whole path (for IE)

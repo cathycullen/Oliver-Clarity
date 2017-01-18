@@ -18,11 +18,11 @@
       <%= f.input :contact %>
       <%= f.input :email %>
       <%= f.input :owner %>
-      <%= f.input :entity %>
+      <%= f.input :entity, collection: Corp::ENTITY_TYPES, prompt: "Entity Type (corp, LLC, etc.)"  %>
       <%= f.input :address %>
       <%= f.input :description %>
-      <%= f.input :colors %>
-      <%= f.input :anywhere %>
+      <%= f.input :colors, collection: Mark::COLORS, prompt: "Color"  %>
+      <%= f.input :anywhere, collection: yes_no_arr, prompt: "Use Anywhere?"  %>
       <%= f.input :commerce %>
       <%= f.input :products %>
       <%= f.input :serial %>
