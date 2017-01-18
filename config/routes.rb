@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/terms', to: 'static_pages#terms'
   get '/news', to: 'static_pages#news'
   get '/lawyers', to: 'static_pages#lawyers'
+  get '/mark_tools', to: 'static_pages#mark_tools'
   get '/subscribe', to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
