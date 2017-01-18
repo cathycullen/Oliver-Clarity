@@ -1,3 +1,4 @@
+
 <div class="row-fluid col-md-6 clearfix">
   <div class="span4 well">
 
@@ -15,11 +16,12 @@
       <% end %>
     <fieldset >
       <legend><%= operation %> expense</legend>
-      <%= f.input :date %>
+      <%= f.input :date, as: :date, html5: true %>
       <%= f.input :vendor %>
       <%= f.input :amount %>
       <div class="actions">
-        <%= f.button :submit %>
+      <%= f.button :submit %>
+      <%= link_to 'Cancel', user_path(@user), class: "btn btn-lg btn-danger"%>
       </div>
     </fieldset >
     <% end %>

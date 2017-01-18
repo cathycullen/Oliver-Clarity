@@ -7,6 +7,7 @@ before_action :admin_only,   only: [:index]
 before_action :authorize
 
 def index
+  puts "users_path #{users_path}"
   @users = User.all
 end
 
