@@ -1,0 +1,33 @@
+
+<div class="row-fluid col-md-6">
+  <div class="span4 well">
+    <%= simple_form_for @users_attorney do |f| %>
+      <% if @users_attorney.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@users_attorney.errors.count, "error") %> prohibited this attorney from being saved:</h2>
+          <ul>
+          <% @users_attorney.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <fieldset >
+      <legend>Choose An Existing Attorney From Dropdown</legend>
+      <%= f.collection_select :attorney_id, @attorney_names, :id, :name, include_blank: true, selected: 1 %>
+      <div class="actions">
+        <%= f.button :submit ,'Select Attorney'%>
+        <%= hidden_field_tag(:user_id, @user.id) %>
+        <%= link_to 'Cancel', user_path(@user), class: "btn btn-lg btn-danger"%>
+      </div>
+    </fieldset >
+    <% end %>
+    <br>
+    <fieldset >
+      <legend>Or Enter New Attorney</legend>
+      <%= link_to 'Add New Attorney', new_attorney_path, class: "btn btn-lg btn-success"%>
+    </fieldset >
+</div>
+  </div>
+</div>
+</div>
