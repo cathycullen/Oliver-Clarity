@@ -15,7 +15,7 @@
       <% end %>
     <fieldset >
       <legend><%= operation %> Fee</legend>
-      <%= f.input :date %>
+      <%= f.input :date, as: :date, html5: true %>
       <%= f.input :rate %>
       <%= f.input :hours %>
       <%= f.input :charge %>
