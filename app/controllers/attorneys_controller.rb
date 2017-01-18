@@ -4,6 +4,7 @@ class AttorneysController < ApplicationController
   before_action :admin_only,   only: [:index]
 
 def index
+  puts "attorneys_path #{attorneys_path}"
     @attorneys = Attorney.all
 end
 

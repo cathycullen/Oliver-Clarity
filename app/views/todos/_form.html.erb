@@ -21,6 +21,7 @@
       <div class="actions">
         <%= hidden_field_tag(:user_id, @user.id) %>
         <%= f.button :submit %>
+        <%= link_to 'Cancel', user_path(@user), class: "btn btn-lg btn-danger"%>
       </div>
     </fieldset >
     <% end %>
