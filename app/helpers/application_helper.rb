@@ -40,7 +40,22 @@ module ApplicationHelper
     ['NM', 'NM'],
     ['NV', 'NV'],
     ['NY', 'NY'],
-    ['OH', 'OH'] ]
+    ['OH', 'OH'],
+    ['OK', 'OK'],
+    ['OR', 'OR'],
+    ['PA', 'PA'],
+    ['RI', 'RI'],
+    ['SC', 'SC'],
+    ['SD', 'SD'],
+    ['TN', 'TN'],
+    ['TX', 'TX'],
+    ['UT', 'UT'],
+    ['VA', 'VA'],
+    ['VT', 'VT'],
+    ['WA', 'WA'],
+    ['WI', 'WI'],
+    ['WV', 'WV'],
+    ['WY', 'WY'] ]
   end
   def yes_no_arr
       ['Yes', 'No']
