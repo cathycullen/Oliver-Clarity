@@ -140,7 +140,7 @@
 
  }
 
- /* ASIDE */
+ /* HOMEPAGE ASIDE */
 
 #homepage  aside {
    float: right;
@@ -176,13 +176,11 @@
    color:  #f2b632;
  }
 
- /* ABOUT */
-
 #homepage  .teaser {
    font-size: 1.2em;
  }
 
- /* TABLE */
+ /* HOMEPAGE TABLE */
 
 #homepage  table {
    margin-top: 25px;
@@ -244,9 +242,6 @@
    width: auto;
    margin-left: 0;
  }
-
-
- /* SIDEBAR */
 
 #homepage  aside {
    section.user_info {
@@ -334,6 +329,8 @@ h2, h3, h4, h5, h6 {
 .user-container {
   margin-bottom: 100px;
 }
+
+/* PRICING BOX */
 
  .pricing-box {
     border: solid 1px #444;
@@ -533,3 +530,27 @@ body {
 .btn-outline-primary {
   color: #428bca;
 }
+
+.tools {
+    text-align: left;
+    margin-right: 200px;
+    margin-left: 200px;
+}
+
+.tools_middle {
+    text-align: center;
+    margin-right: 200px;
+    margin-left: 200px;
+    border: 1px solid #f2b632;
+}
+
+
+.well {
+   border: 1px solid #f2b632;
+   text-align: center;
+   font-size: 1.2em;
+ }
+
+.well a {
+    color: black;
+ }
