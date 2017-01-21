@@ -31,17 +31,6 @@ def create
     end
 end
 
-def create_old
-  @user = User.new(user_params)
-  if @user.save
-   @user.send_activation_email
-   flash[:info] = "Please check your email to activate your account."
-   redirect_to root_url
-  else
-      render 'new'
-  end
-end
-
 def edit
   @user = User.find(params[:id])
 end
@@ -74,7 +63,7 @@ def destroy
     #   format.html { redirect_to post_comments_path(@post) }
     #   format.xml  { head :ok }
     # end
-  end
+end
 
 private
 

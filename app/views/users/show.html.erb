@@ -222,6 +222,8 @@
                   <%= link_to edit_user_mark_path(@user, mark), class: "btn btn-outline-info btn-sm" do %>
                     <span class="glyphicon  glyphicon-pencil"></span>
                   <% end %>
+                  <%= link_to info_user_mark_path(@user, mark), class: "btn btn-outline-info btn sm" do %>
+                    <span class="glyphicon glyphicon-info-sign"></span>
                 </td>
               </tr>
             <% end %>
@@ -412,4 +414,5 @@
           </div><!-- panel default -->
         </div><!-- col-md-6-->
       </div><!-- row -->
+<% end %>
 <% end %>
