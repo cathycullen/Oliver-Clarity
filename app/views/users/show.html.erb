@@ -195,6 +195,9 @@
               <%= link_to new_user_mark_path(:user_id => @user.id), class: 'btn btn-xs btn-success  pull-right', style: 'color:white' do %>
                   <i class="glyphicon glyphicon-plus "></i>
               <% end %>
+              <%= link_to mark_tools_path(:user_id => @user.id), class: 'btn btn-xs btn-success pull-right', style: 'color:white' do %>
+                  <i class="glyphicon glyphicon-info-sign"></i>
+              <% end %>
               Trademarks</h3>
             </div>
         <div class="panel-body" style="padding:0;">
@@ -222,8 +225,9 @@
                   <%= link_to edit_user_mark_path(@user, mark), class: "btn btn-outline-info btn-sm" do %>
                     <span class="glyphicon  glyphicon-pencil"></span>
                   <% end %>
-                  <%= link_to '#', class: "btn btn-outline-info btn sm" do %>
-                    <span class="glyphicon glyphicon-info-sign"></span>
+                  <%= link_to user_mark_path(@user, mark), class: "btn btn-outline-info btn sm" do %>
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
@@ -414,5 +418,4 @@
           </div><!-- panel default -->
         </div><!-- col-md-6-->
       </div><!-- row -->
-<% end %>
 <% end %>
