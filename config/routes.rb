@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'payments/index'
+
+  get 'payments/new'
+
+  get 'payments/create'
+
   resources :users do
     resources :fees
     resources :expenses
@@ -13,6 +19,7 @@ Rails.application.routes.draw do
   resources :todos
   resources :account_activations, only: [:edit]
   resources :users_attorneys
+  resources :payments, only: [:index, :new, :create]
 
   get 'sessions/new'
 
